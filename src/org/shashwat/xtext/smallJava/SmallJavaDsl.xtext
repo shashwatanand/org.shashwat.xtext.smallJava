@@ -8,4 +8,7 @@ SmallJava:
 	'}';
 
 Attribute:
-	name=ID;
+	datatype=Datatype name=ID;
+	
+Datatype:
+	'String' | 'Integer' | 'Boolean' | 'Decimal' | 'BigDecimal';

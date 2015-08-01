@@ -21,20 +21,25 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSmallJavaDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'class'", "'extends'", "'{'", "'}'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'class'", "'extends'", "'{'", "'}'", "'String'", "'Integer'", "'Boolean'", "'Decimal'", "'BigDecimal'"
     };
-    public static final int RULE_ID=4;
-    public static final int RULE_WS=9;
     public static final int RULE_STRING=6;
-    public static final int RULE_ANY_OTHER=10;
     public static final int RULE_SL_COMMENT=8;
-    public static final int RULE_INT=5;
+    public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
     public static final int T__11=11;
-    public static final int RULE_ML_COMMENT=7;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
+    public static final int RULE_ID=4;
+    public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_INT=5;
+    public static final int RULE_ML_COMMENT=7;
 
     // delegates
     // delegators
@@ -215,7 +220,7 @@ public class InternalSmallJavaDslParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==RULE_ID) ) {
+                if ( ((LA2_0>=15 && LA2_0<=19)) ) {
                     alt2=1;
                 }
 
@@ -319,27 +324,63 @@ public class InternalSmallJavaDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttribute"
-    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:162:1: ruleAttribute returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:162:1: ruleAttribute returns [EObject current=null] : ( ( (lv_datatype_0_0= ruleDatatype ) ) ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleAttribute() throws RecognitionException {
         EObject current = null;
 
-        Token lv_name_0_0=null;
+        Token lv_name_1_0=null;
+        AntlrDatatypeRuleToken lv_datatype_0_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:165:28: ( ( (lv_name_0_0= RULE_ID ) ) )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:166:1: ( (lv_name_0_0= RULE_ID ) )
+            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:165:28: ( ( ( (lv_datatype_0_0= ruleDatatype ) ) ( (lv_name_1_0= RULE_ID ) ) ) )
+            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:166:1: ( ( (lv_datatype_0_0= ruleDatatype ) ) ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:166:1: ( (lv_name_0_0= RULE_ID ) )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:167:1: (lv_name_0_0= RULE_ID )
+            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:166:1: ( ( (lv_datatype_0_0= ruleDatatype ) ) ( (lv_name_1_0= RULE_ID ) ) )
+            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:166:2: ( (lv_datatype_0_0= ruleDatatype ) ) ( (lv_name_1_0= RULE_ID ) )
             {
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:167:1: (lv_name_0_0= RULE_ID )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:168:3: lv_name_0_0= RULE_ID
+            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:166:2: ( (lv_datatype_0_0= ruleDatatype ) )
+            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:167:1: (lv_datatype_0_0= ruleDatatype )
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAttribute312); 
+            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:167:1: (lv_datatype_0_0= ruleDatatype )
+            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:168:3: lv_datatype_0_0= ruleDatatype
+            {
+             
+            	        newCompositeNode(grammarAccess.getAttributeAccess().getDatatypeDatatypeParserRuleCall_0_0()); 
+            	    
+            pushFollow(FOLLOW_ruleDatatype_in_ruleAttribute317);
+            lv_datatype_0_0=ruleDatatype();
 
-            			newLeafNode(lv_name_0_0, grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_0()); 
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getAttributeRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"datatype",
+                    		lv_datatype_0_0, 
+                    		"Datatype");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:184:2: ( (lv_name_1_0= RULE_ID ) )
+            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:185:1: (lv_name_1_0= RULE_ID )
+            {
+            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:185:1: (lv_name_1_0= RULE_ID )
+            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:186:3: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAttribute334); 
+
+            			newLeafNode(lv_name_1_0, grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_1_0()); 
             		
 
             	        if (current==null) {
@@ -348,9 +389,12 @@ public class InternalSmallJavaDslParser extends AbstractInternalAntlrParser {
                    		setWithLastConsumed(
                    			current, 
                    			"name",
-                    		lv_name_0_0, 
+                    		lv_name_1_0, 
                     		"ID");
             	    
+
+            }
+
 
             }
 
@@ -373,6 +417,166 @@ public class InternalSmallJavaDslParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleAttribute"
 
+
+    // $ANTLR start "entryRuleDatatype"
+    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:210:1: entryRuleDatatype returns [String current=null] : iv_ruleDatatype= ruleDatatype EOF ;
+    public final String entryRuleDatatype() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleDatatype = null;
+
+
+        try {
+            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:211:2: (iv_ruleDatatype= ruleDatatype EOF )
+            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:212:2: iv_ruleDatatype= ruleDatatype EOF
+            {
+             newCompositeNode(grammarAccess.getDatatypeRule()); 
+            pushFollow(FOLLOW_ruleDatatype_in_entryRuleDatatype376);
+            iv_ruleDatatype=ruleDatatype();
+
+            state._fsp--;
+
+             current =iv_ruleDatatype.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDatatype387); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleDatatype"
+
+
+    // $ANTLR start "ruleDatatype"
+    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:219:1: ruleDatatype returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'String' | kw= 'Integer' | kw= 'Boolean' | kw= 'Decimal' | kw= 'BigDecimal' ) ;
+    public final AntlrDatatypeRuleToken ruleDatatype() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+         enterRule(); 
+            
+        try {
+            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:222:28: ( (kw= 'String' | kw= 'Integer' | kw= 'Boolean' | kw= 'Decimal' | kw= 'BigDecimal' ) )
+            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:223:1: (kw= 'String' | kw= 'Integer' | kw= 'Boolean' | kw= 'Decimal' | kw= 'BigDecimal' )
+            {
+            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:223:1: (kw= 'String' | kw= 'Integer' | kw= 'Boolean' | kw= 'Decimal' | kw= 'BigDecimal' )
+            int alt3=5;
+            switch ( input.LA(1) ) {
+            case 15:
+                {
+                alt3=1;
+                }
+                break;
+            case 16:
+                {
+                alt3=2;
+                }
+                break;
+            case 17:
+                {
+                alt3=3;
+                }
+                break;
+            case 18:
+                {
+                alt3=4;
+                }
+                break;
+            case 19:
+                {
+                alt3=5;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 3, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt3) {
+                case 1 :
+                    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:224:2: kw= 'String'
+                    {
+                    kw=(Token)match(input,15,FOLLOW_15_in_ruleDatatype425); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getDatatypeAccess().getStringKeyword_0()); 
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:231:2: kw= 'Integer'
+                    {
+                    kw=(Token)match(input,16,FOLLOW_16_in_ruleDatatype444); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getDatatypeAccess().getIntegerKeyword_1()); 
+                        
+
+                    }
+                    break;
+                case 3 :
+                    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:238:2: kw= 'Boolean'
+                    {
+                    kw=(Token)match(input,17,FOLLOW_17_in_ruleDatatype463); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getDatatypeAccess().getBooleanKeyword_2()); 
+                        
+
+                    }
+                    break;
+                case 4 :
+                    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:245:2: kw= 'Decimal'
+                    {
+                    kw=(Token)match(input,18,FOLLOW_18_in_ruleDatatype482); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getDatatypeAccess().getDecimalKeyword_3()); 
+                        
+
+                    }
+                    break;
+                case 5 :
+                    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:252:2: kw= 'BigDecimal'
+                    {
+                    kw=(Token)match(input,19,FOLLOW_19_in_ruleDatatype501); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getDatatypeAccess().getBigDecimalKeyword_4()); 
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleDatatype"
+
     // Delegated rules
 
 
@@ -384,11 +588,19 @@ public class InternalSmallJavaDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_ID_in_ruleSmallJava139 = new BitSet(new long[]{0x0000000000003000L});
     public static final BitSet FOLLOW_12_in_ruleSmallJava157 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleSmallJava177 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleSmallJava191 = new BitSet(new long[]{0x0000000000004010L});
-    public static final BitSet FOLLOW_ruleAttribute_in_ruleSmallJava212 = new BitSet(new long[]{0x0000000000004010L});
+    public static final BitSet FOLLOW_13_in_ruleSmallJava191 = new BitSet(new long[]{0x00000000000FC000L});
+    public static final BitSet FOLLOW_ruleAttribute_in_ruleSmallJava212 = new BitSet(new long[]{0x00000000000FC000L});
     public static final BitSet FOLLOW_14_in_ruleSmallJava225 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAttribute_in_entryRuleAttribute261 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAttribute271 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAttribute312 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDatatype_in_ruleAttribute317 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAttribute334 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDatatype_in_entryRuleDatatype376 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDatatype387 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_ruleDatatype425 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_ruleDatatype444 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleDatatype463 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_ruleDatatype482 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleDatatype501 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -20,6 +20,7 @@ import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaDslPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.AttributeImpl#getDatatype <em>Datatype</em>}</li>
  *   <li>{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.AttributeImpl#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -27,6 +28,26 @@ import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaDslPackage;
  */
 public class AttributeImpl extends MinimalEObjectImpl.Container implements Attribute
 {
+  /**
+   * The default value of the '{@link #getDatatype() <em>Datatype</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDatatype()
+   * @generated
+   * @ordered
+   */
+  protected static final String DATATYPE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDatatype() <em>Datatype</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDatatype()
+   * @generated
+   * @ordered
+   */
+  protected String datatype = DATATYPE_EDEFAULT;
+
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -73,6 +94,29 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getDatatype()
+  {
+    return datatype;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDatatype(String newDatatype)
+  {
+    String oldDatatype = datatype;
+    datatype = newDatatype;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SmallJavaDslPackage.ATTRIBUTE__DATATYPE, oldDatatype, datatype));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getName()
   {
     return name;
@@ -101,6 +145,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   {
     switch (featureID)
     {
+      case SmallJavaDslPackage.ATTRIBUTE__DATATYPE:
+        return getDatatype();
       case SmallJavaDslPackage.ATTRIBUTE__NAME:
         return getName();
     }
@@ -117,6 +163,9 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   {
     switch (featureID)
     {
+      case SmallJavaDslPackage.ATTRIBUTE__DATATYPE:
+        setDatatype((String)newValue);
+        return;
       case SmallJavaDslPackage.ATTRIBUTE__NAME:
         setName((String)newValue);
         return;
@@ -134,6 +183,9 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   {
     switch (featureID)
     {
+      case SmallJavaDslPackage.ATTRIBUTE__DATATYPE:
+        setDatatype(DATATYPE_EDEFAULT);
+        return;
       case SmallJavaDslPackage.ATTRIBUTE__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -151,6 +203,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   {
     switch (featureID)
     {
+      case SmallJavaDslPackage.ATTRIBUTE__DATATYPE:
+        return DATATYPE_EDEFAULT == null ? datatype != null : !DATATYPE_EDEFAULT.equals(datatype);
       case SmallJavaDslPackage.ATTRIBUTE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
@@ -168,7 +222,9 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
+    result.append(" (datatype: ");
+    result.append(datatype);
+    result.append(", name: ");
     result.append(name);
     result.append(')');
     return result.toString();

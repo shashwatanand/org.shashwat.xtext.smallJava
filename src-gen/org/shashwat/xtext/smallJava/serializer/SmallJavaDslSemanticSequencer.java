@@ -42,16 +42,19 @@ public class SmallJavaDslSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     name=ID
+	 *     (datatype=Datatype name=ID)
 	 */
 	protected void sequence_Attribute(EObject context, Attribute semanticObject) {
 		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SmallJavaDslPackage.Literals.ATTRIBUTE__DATATYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmallJavaDslPackage.Literals.ATTRIBUTE__DATATYPE));
 			if(transientValues.isValueTransient(semanticObject, SmallJavaDslPackage.Literals.ATTRIBUTE__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmallJavaDslPackage.Literals.ATTRIBUTE__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getAttributeAccess().getDatatypeDatatypeParserRuleCall_0_0(), semanticObject.getDatatype());
+		feeder.accept(grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

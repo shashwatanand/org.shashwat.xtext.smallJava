@@ -163,11 +163,29 @@ ruleAttribute returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
+((
 (
+		{ 
+	        newCompositeNode(grammarAccess.getAttributeAccess().getDatatypeDatatypeParserRuleCall_0_0()); 
+	    }
+		lv_datatype_0_0=ruleDatatype		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAttributeRule());
+	        }
+       		set(
+       			$current, 
+       			"datatype",
+        		lv_datatype_0_0, 
+        		"Datatype");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
 (
-		lv_name_0_0=RULE_ID
+		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_name_0_0, grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -176,13 +194,68 @@ ruleAttribute returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_0_0, 
+        		lv_name_1_0, 
         		"ID");
 	    }
 
 )
-)
+))
 ;
+
+
+
+
+
+// Entry rule entryRuleDatatype
+entryRuleDatatype returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getDatatypeRule()); } 
+	 iv_ruleDatatype=ruleDatatype 
+	 { $current=$iv_ruleDatatype.current.getText(); }  
+	 EOF 
+;
+
+// Rule Datatype
+ruleDatatype returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='String' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getDatatypeAccess().getStringKeyword_0()); 
+    }
+
+    |
+	kw='Integer' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getDatatypeAccess().getIntegerKeyword_1()); 
+    }
+
+    |
+	kw='Boolean' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getDatatypeAccess().getBooleanKeyword_2()); 
+    }
+
+    |
+	kw='Decimal' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getDatatypeAccess().getDecimalKeyword_3()); 
+    }
+
+    |
+	kw='BigDecimal' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getDatatypeAccess().getBigDecimalKeyword_4()); 
+    }
+)
+    ;
 
 
 

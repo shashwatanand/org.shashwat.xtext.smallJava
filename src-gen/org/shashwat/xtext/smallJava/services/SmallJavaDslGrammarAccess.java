@@ -80,23 +80,68 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class AttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Attribute");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cDatatypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cDatatypeDatatypeParserRuleCall_0_0 = (RuleCall)cDatatypeAssignment_0.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//Attribute:
-		//	name=ID;
+		//	datatype=Datatype name=ID;
 		@Override public ParserRule getRule() { return rule; }
 
+		//datatype=Datatype name=ID
+		public Group getGroup() { return cGroup; }
+
+		//datatype=Datatype
+		public Assignment getDatatypeAssignment_0() { return cDatatypeAssignment_0; }
+
+		//Datatype
+		public RuleCall getDatatypeDatatypeParserRuleCall_0_0() { return cDatatypeDatatypeParserRuleCall_0_0; }
+
 		//name=ID
-		public Assignment getNameAssignment() { return cNameAssignment; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+
+	public class DatatypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Datatype");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cStringKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cIntegerKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cBooleanKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cDecimalKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cBigDecimalKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		
+		//Datatype:
+		//	"String" | "Integer" | "Boolean" | "Decimal" | "BigDecimal";
+		@Override public ParserRule getRule() { return rule; }
+
+		//"String" | "Integer" | "Boolean" | "Decimal" | "BigDecimal"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"String"
+		public Keyword getStringKeyword_0() { return cStringKeyword_0; }
+
+		//"Integer"
+		public Keyword getIntegerKeyword_1() { return cIntegerKeyword_1; }
+
+		//"Boolean"
+		public Keyword getBooleanKeyword_2() { return cBooleanKeyword_2; }
+
+		//"Decimal"
+		public Keyword getDecimalKeyword_3() { return cDecimalKeyword_3; }
+
+		//"BigDecimal"
+		public Keyword getBigDecimalKeyword_4() { return cBigDecimalKeyword_4; }
 	}
 	
 	
 	private final SmallJavaElements pSmallJava;
 	private final AttributeElements pAttribute;
+	private final DatatypeElements pDatatype;
 	
 	private final Grammar grammar;
 
@@ -109,6 +154,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pSmallJava = new SmallJavaElements();
 		this.pAttribute = new AttributeElements();
+		this.pDatatype = new DatatypeElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -149,13 +195,23 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Attribute:
-	//	name=ID;
+	//	datatype=Datatype name=ID;
 	public AttributeElements getAttributeAccess() {
 		return pAttribute;
 	}
 	
 	public ParserRule getAttributeRule() {
 		return getAttributeAccess().getRule();
+	}
+
+	//Datatype:
+	//	"String" | "Integer" | "Boolean" | "Decimal" | "BigDecimal";
+	public DatatypeElements getDatatypeAccess() {
+		return pDatatype;
+	}
+	
+	public ParserRule getDatatypeRule() {
+		return getDatatypeAccess().getRule();
 	}
 
 	//terminal ID:

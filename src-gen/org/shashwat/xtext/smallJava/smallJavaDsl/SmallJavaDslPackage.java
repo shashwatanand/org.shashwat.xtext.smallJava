@@ -113,13 +113,22 @@ public interface SmallJavaDslPackage extends EPackage
   int ATTRIBUTE = 1;
 
   /**
+   * The feature id for the '<em><b>Datatype</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE__DATATYPE = 0;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE__NAME = 0;
+  int ATTRIBUTE__NAME = 1;
 
   /**
    * The number of structural features of the '<em>Attribute</em>' class.
@@ -128,7 +137,7 @@ public interface SmallJavaDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_FEATURE_COUNT = 1;
+  int ATTRIBUTE_FEATURE_COUNT = 2;
 
 
   /**
@@ -183,6 +192,17 @@ public interface SmallJavaDslPackage extends EPackage
    * @generated
    */
   EClass getAttribute();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.shashwat.xtext.smallJava.smallJavaDsl.Attribute#getDatatype <em>Datatype</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Datatype</em>'.
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.Attribute#getDatatype()
+   * @see #getAttribute()
+   * @generated
+   */
+  EAttribute getAttribute_Datatype();
 
   /**
    * Returns the meta object for the attribute '{@link org.shashwat.xtext.smallJava.smallJavaDsl.Attribute#getName <em>Name</em>}'.
@@ -261,6 +281,14 @@ public interface SmallJavaDslPackage extends EPackage
      * @generated
      */
     EClass ATTRIBUTE = eINSTANCE.getAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Datatype</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATTRIBUTE__DATATYPE = eINSTANCE.getAttribute_Datatype();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

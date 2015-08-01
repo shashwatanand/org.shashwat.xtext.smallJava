@@ -13,6 +13,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmallJavaDsl.ecore#//SmallJava/attribute"/>
     </genClasses>
     <genClasses ecoreClass="SmallJavaDsl.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmallJavaDsl.ecore#//Attribute/datatype"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmallJavaDsl.ecore#//Attribute/name"/>
     </genClasses>
   </genPackages>
