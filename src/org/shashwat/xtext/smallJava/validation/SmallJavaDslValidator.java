@@ -11,7 +11,7 @@ public class SmallJavaDslValidator extends AbstractSmallJavaDslValidator {
 	public void checkClassNameShouldStartWithCapitalLetter(SmallJava smallJava) {
 		String className = smallJava.getName();
 		if (Character.isLowerCase(className.charAt(0))) {
-			warning("Class name should start with an upper case letter", SmallJavaDslPackage.Literals.SMALL_JAVA__NAME);
+			warning("Class name should start with an upper case letter", SmallJavaDslPackage.Literals.SMALL_JAVA__NAME, IssueCodes.INVALID_CLASS_NAME);
 		}
 	}
 	
@@ -19,7 +19,7 @@ public class SmallJavaDslValidator extends AbstractSmallJavaDslValidator {
 	public void checkAttributeShouldStartWithLowerLetter(Attribute attribute) {
 		String attributeName = attribute.getName();
 		if (Character.isUpperCase(attributeName.charAt(0))) {
-			warning("Attribute name should start with an lower case letter", SmallJavaDslPackage.Literals.ATTRIBUTE__NAME);
+			warning("Attribute name should start with an lower case letter", SmallJavaDslPackage.Literals.ATTRIBUTE__NAME, IssueCodes.INVALID_ATTRIBUTE_NAME);
 		}
 	}
 	
@@ -28,7 +28,7 @@ public class SmallJavaDslValidator extends AbstractSmallJavaDslValidator {
 		SmallJava parent = smallJava.getParent();
 		if (parent != null) {
 			if (parent.isFinal()) {
-				error("SmallJava class cannot extend a final class", SmallJavaDslPackage.Literals.SMALL_JAVA__PARENT);
+				error("SmallJava class cannot extend a final class", SmallJavaDslPackage.Literals.SMALL_JAVA__PARENT, IssueCodes.INVALID_PARENT_NAME);
 			}
 		}
 	}
