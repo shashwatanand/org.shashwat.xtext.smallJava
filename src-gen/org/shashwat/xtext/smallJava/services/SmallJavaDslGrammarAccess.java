@@ -35,10 +35,10 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//SmallJava:
-		//	"class" name=ID ("extends" parent=[SmallJava])? "{" attribute=Attribute "}";
+		//	"class" name=ID ("extends" parent=[SmallJava])? "{" attribute+=Attribute* "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"class" name=ID ("extends" parent=[SmallJava])? "{" attribute=Attribute "}"
+		//"class" name=ID ("extends" parent=[SmallJava])? "{" attribute+=Attribute* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"class"
@@ -68,7 +68,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//attribute=Attribute
+		//attribute+=Attribute*
 		public Assignment getAttributeAssignment_4() { return cAttributeAssignment_4; }
 
 		//Attribute
@@ -139,7 +139,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//SmallJava:
-	//	"class" name=ID ("extends" parent=[SmallJava])? "{" attribute=Attribute "}";
+	//	"class" name=ID ("extends" parent=[SmallJava])? "{" attribute+=Attribute* "}";
 	public SmallJavaElements getSmallJavaAccess() {
 		return pSmallJava;
 	}

@@ -2,6 +2,8 @@
  */
 package org.shashwat.xtext.smallJava.smallJavaDsl;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -77,29 +79,19 @@ public interface SmallJava extends EObject
   void setParent(SmallJava value);
 
   /**
-   * Returns the value of the '<em><b>Attribute</b></em>' containment reference.
+   * Returns the value of the '<em><b>Attribute</b></em>' containment reference list.
+   * The list contents are of type {@link org.shashwat.xtext.smallJava.smallJavaDsl.Attribute}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Attribute</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Attribute</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Attribute</em>' containment reference.
-   * @see #setAttribute(Attribute)
+   * @return the value of the '<em>Attribute</em>' containment reference list.
    * @see org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaDslPackage#getSmallJava_Attribute()
    * @model containment="true"
    * @generated
    */
-  Attribute getAttribute();
-
-  /**
-   * Sets the value of the '{@link org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava#getAttribute <em>Attribute</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Attribute</em>' containment reference.
-   * @see #getAttribute()
-   * @generated
-   */
-  void setAttribute(Attribute value);
+  EList<Attribute> getAttribute();
 
 } // SmallJava

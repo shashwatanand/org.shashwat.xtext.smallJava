@@ -85,7 +85,7 @@ public interface SmallJavaDslPackage extends EPackage
   int SMALL_JAVA__PARENT = 1;
 
   /**
-   * The feature id for the '<em><b>Attribute</b></em>' containment reference.
+   * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -164,10 +164,10 @@ public interface SmallJavaDslPackage extends EPackage
   EReference getSmallJava_Parent();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava#getAttribute <em>Attribute</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava#getAttribute <em>Attribute</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Attribute</em>'.
+   * @return the meta object for the containment reference list '<em>Attribute</em>'.
    * @see org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava#getAttribute()
    * @see #getSmallJava()
    * @generated
@@ -245,7 +245,7 @@ public interface SmallJavaDslPackage extends EPackage
     EReference SMALL_JAVA__PARENT = eINSTANCE.getSmallJava_Parent();
 
     /**
-     * The meta object literal for the '<em><b>Attribute</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Attribute</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

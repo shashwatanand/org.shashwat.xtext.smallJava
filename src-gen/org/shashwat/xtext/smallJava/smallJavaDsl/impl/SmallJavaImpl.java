@@ -2,14 +2,21 @@
  */
 package org.shashwat.xtext.smallJava.smallJavaDsl.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.shashwat.xtext.smallJava.smallJavaDsl.Attribute;
 import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava;
@@ -63,14 +70,14 @@ public class SmallJavaImpl extends MinimalEObjectImpl.Container implements Small
   protected SmallJava parent;
 
   /**
-   * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' containment reference.
+   * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getAttribute()
    * @generated
    * @ordered
    */
-  protected Attribute attribute;
+  protected EList<Attribute> attribute;
 
   /**
    * <!-- begin-user-doc -->
@@ -164,47 +171,13 @@ public class SmallJavaImpl extends MinimalEObjectImpl.Container implements Small
    * <!-- end-user-doc -->
    * @generated
    */
-  public Attribute getAttribute()
+  public EList<Attribute> getAttribute()
   {
+    if (attribute == null)
+    {
+      attribute = new EObjectContainmentEList<Attribute>(Attribute.class, this, SmallJavaDslPackage.SMALL_JAVA__ATTRIBUTE);
+    }
     return attribute;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetAttribute(Attribute newAttribute, NotificationChain msgs)
-  {
-    Attribute oldAttribute = attribute;
-    attribute = newAttribute;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmallJavaDslPackage.SMALL_JAVA__ATTRIBUTE, oldAttribute, newAttribute);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setAttribute(Attribute newAttribute)
-  {
-    if (newAttribute != attribute)
-    {
-      NotificationChain msgs = null;
-      if (attribute != null)
-        msgs = ((InternalEObject)attribute).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmallJavaDslPackage.SMALL_JAVA__ATTRIBUTE, null, msgs);
-      if (newAttribute != null)
-        msgs = ((InternalEObject)newAttribute).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmallJavaDslPackage.SMALL_JAVA__ATTRIBUTE, null, msgs);
-      msgs = basicSetAttribute(newAttribute, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SmallJavaDslPackage.SMALL_JAVA__ATTRIBUTE, newAttribute, newAttribute));
   }
 
   /**
@@ -218,7 +191,7 @@ public class SmallJavaImpl extends MinimalEObjectImpl.Container implements Small
     switch (featureID)
     {
       case SmallJavaDslPackage.SMALL_JAVA__ATTRIBUTE:
-        return basicSetAttribute(null, msgs);
+        return ((InternalEList<?>)getAttribute()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -249,6 +222,7 @@ public class SmallJavaImpl extends MinimalEObjectImpl.Container implements Small
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -261,7 +235,8 @@ public class SmallJavaImpl extends MinimalEObjectImpl.Container implements Small
         setParent((SmallJava)newValue);
         return;
       case SmallJavaDslPackage.SMALL_JAVA__ATTRIBUTE:
-        setAttribute((Attribute)newValue);
+        getAttribute().clear();
+        getAttribute().addAll((Collection<? extends Attribute>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -284,7 +259,7 @@ public class SmallJavaImpl extends MinimalEObjectImpl.Container implements Small
         setParent((SmallJava)null);
         return;
       case SmallJavaDslPackage.SMALL_JAVA__ATTRIBUTE:
-        setAttribute((Attribute)null);
+        getAttribute().clear();
         return;
     }
     super.eUnset(featureID);
@@ -305,7 +280,7 @@ public class SmallJavaImpl extends MinimalEObjectImpl.Container implements Small
       case SmallJavaDslPackage.SMALL_JAVA__PARENT:
         return parent != null;
       case SmallJavaDslPackage.SMALL_JAVA__ATTRIBUTE:
-        return attribute != null;
+        return attribute != null && !attribute.isEmpty();
     }
     return super.eIsSet(featureID);
   }

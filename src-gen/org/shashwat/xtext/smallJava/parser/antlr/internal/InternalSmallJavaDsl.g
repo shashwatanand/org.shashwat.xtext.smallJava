@@ -129,7 +129,7 @@ ruleSmallJava returns [EObject current=null]
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSmallJavaRule());
 	        }
-       		set(
+       		add(
        			$current, 
        			"attribute",
         		lv_attribute_5_0, 
@@ -138,7 +138,7 @@ ruleSmallJava returns [EObject current=null]
 	    }
 
 )
-)	otherlv_6='}' 
+)*	otherlv_6='}' 
     {
     	newLeafNode(otherlv_6, grammarAccess.getSmallJavaAccess().getRightCurlyBracketKeyword_5());
     }
