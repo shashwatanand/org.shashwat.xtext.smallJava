@@ -58,6 +58,43 @@ public interface SmallJavaDslPackage extends EPackage
   SmallJavaDslPackage eINSTANCE = org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslPackageImpl.init();
 
   /**
+   * The meta object id for the '{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.NamespaceImpl <em>Namespace</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.NamespaceImpl
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslPackageImpl#getNamespace()
+   * @generated
+   */
+  int NAMESPACE = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMESPACE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Small Java</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMESPACE__SMALL_JAVA = 1;
+
+  /**
+   * The number of structural features of the '<em>Namespace</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMESPACE_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaImpl <em>Small Java</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -65,7 +102,7 @@ public interface SmallJavaDslPackage extends EPackage
    * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslPackageImpl#getSmallJava()
    * @generated
    */
-  int SMALL_JAVA = 0;
+  int SMALL_JAVA = 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -129,7 +166,7 @@ public interface SmallJavaDslPackage extends EPackage
    * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslPackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 1;
+  int ATTRIBUTE = 2;
 
   /**
    * The feature id for the '<em><b>Datatype</b></em>' containment reference.
@@ -175,7 +212,7 @@ public interface SmallJavaDslPackage extends EPackage
    * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslPackageImpl#getDatatype()
    * @generated
    */
-  int DATATYPE = 2;
+  int DATATYPE = 3;
 
   /**
    * The number of structural features of the '<em>Datatype</em>' class.
@@ -194,7 +231,7 @@ public interface SmallJavaDslPackage extends EPackage
    * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslPackageImpl#getSmallJavaType()
    * @generated
    */
-  int SMALL_JAVA_TYPE = 3;
+  int SMALL_JAVA_TYPE = 4;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -222,8 +259,40 @@ public interface SmallJavaDslPackage extends EPackage
    * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslPackageImpl#getVisibilityTypes()
    * @generated
    */
-  int VISIBILITY_TYPES = 4;
+  int VISIBILITY_TYPES = 5;
 
+
+  /**
+   * Returns the meta object for class '{@link org.shashwat.xtext.smallJava.smallJavaDsl.Namespace <em>Namespace</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Namespace</em>'.
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.Namespace
+   * @generated
+   */
+  EClass getNamespace();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.shashwat.xtext.smallJava.smallJavaDsl.Namespace#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.Namespace#getName()
+   * @see #getNamespace()
+   * @generated
+   */
+  EAttribute getNamespace_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.shashwat.xtext.smallJava.smallJavaDsl.Namespace#getSmallJava <em>Small Java</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Small Java</em>'.
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.Namespace#getSmallJava()
+   * @see #getNamespace()
+   * @generated
+   */
+  EReference getNamespace_SmallJava();
 
   /**
    * Returns the meta object for class '{@link org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava <em>Small Java</em>}'.
@@ -397,6 +466,32 @@ public interface SmallJavaDslPackage extends EPackage
    */
   interface Literals
   {
+    /**
+     * The meta object literal for the '{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.NamespaceImpl <em>Namespace</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.NamespaceImpl
+     * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslPackageImpl#getNamespace()
+     * @generated
+     */
+    EClass NAMESPACE = eINSTANCE.getNamespace();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NAMESPACE__NAME = eINSTANCE.getNamespace_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Small Java</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NAMESPACE__SMALL_JAVA = eINSTANCE.getNamespace_SmallJava();
+
     /**
      * The meta object literal for the '{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaImpl <em>Small Java</em>}' class.
      * <!-- begin-user-doc -->

@@ -11,6 +11,10 @@
       <genEnumLiterals ecoreEnumLiteral="SmallJavaDsl.ecore#//VisibilityTypes/PUBLIC"/>
       <genEnumLiterals ecoreEnumLiteral="SmallJavaDsl.ecore#//VisibilityTypes/PRIVATE"/>
     </genEnums>
+    <genClasses ecoreClass="SmallJavaDsl.ecore#//Namespace">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmallJavaDsl.ecore#//Namespace/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmallJavaDsl.ecore#//Namespace/smallJava"/>
+    </genClasses>
     <genClasses ecoreClass="SmallJavaDsl.ecore#//SmallJava">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmallJavaDsl.ecore#//SmallJava/visibility"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmallJavaDsl.ecore#//SmallJava/final"/>

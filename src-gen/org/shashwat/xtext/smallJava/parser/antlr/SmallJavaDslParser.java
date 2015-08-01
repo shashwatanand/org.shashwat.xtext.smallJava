@@ -25,7 +25,7 @@ public class SmallJavaDslParser extends org.eclipse.xtext.parser.antlr.AbstractA
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "SmallJava";
+		return "Namespace";
 	}
 	
 	public SmallJavaDslGrammarAccess getGrammarAccess() {

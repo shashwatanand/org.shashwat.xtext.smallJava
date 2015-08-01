@@ -72,6 +72,13 @@ public class SmallJavaDslSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
+      case SmallJavaDslPackage.NAMESPACE:
+      {
+        Namespace namespace = (Namespace)theEObject;
+        T result = caseNamespace(namespace);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SmallJavaDslPackage.SMALL_JAVA:
       {
         SmallJava smallJava = (SmallJava)theEObject;
@@ -103,6 +110,22 @@ public class SmallJavaDslSwitch<T> extends Switch<T>
       }
       default: return defaultCase(theEObject);
     }
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Namespace</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Namespace</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNamespace(Namespace object)
+  {
+    return null;
   }
 
   /**

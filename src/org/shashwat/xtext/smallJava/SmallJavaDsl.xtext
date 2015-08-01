@@ -2,6 +2,16 @@ grammar org.shashwat.xtext.smallJava.SmallJavaDsl with org.eclipse.xtext.common.
 
 generate smallJavaDsl "http://www.shashwat.org/xtext/smallJava/SmallJavaDsl"
 
+Namespace:
+	'namespace' name=QualifiedName
+	smallJava=SmallJava;
+
+QualifiedName:
+	ID ('.'ID)*;
+	
+QualifiedNameWithWildCards:
+	QualifiedName ("."*)?;
+
 SmallJava:
 	(visibility=VisibilityTypes)? (final?='final')? 'class' name=ID ('extends' parent=[SmallJava])? '{' 
 		attribute+=Attribute*

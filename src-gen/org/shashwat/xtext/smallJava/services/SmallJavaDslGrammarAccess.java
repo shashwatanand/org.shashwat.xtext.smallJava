@@ -18,6 +18,66 @@ import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
+	public class NamespaceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Namespace");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cNamespaceKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cSmallJavaAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cSmallJavaSmallJavaParserRuleCall_2_0 = (RuleCall)cSmallJavaAssignment_2.eContents().get(0);
+		
+		//Namespace:
+		//	"namespace" name=QualifiedName smallJava=SmallJava;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"namespace" name=QualifiedName smallJava=SmallJava
+		public Group getGroup() { return cGroup; }
+
+		//"namespace"
+		public Keyword getNamespaceKeyword_0() { return cNamespaceKeyword_0; }
+
+		//name=QualifiedName
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
+
+		//smallJava=SmallJava
+		public Assignment getSmallJavaAssignment_2() { return cSmallJavaAssignment_2; }
+
+		//SmallJava
+		public RuleCall getSmallJavaSmallJavaParserRuleCall_2_0() { return cSmallJavaSmallJavaParserRuleCall_2_0; }
+	}
+
+	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedName");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		
+		//QualifiedName:
+		//	ID ("." ID)*;
+		@Override public ParserRule getRule() { return rule; }
+
+		//ID ("." ID)*
+		public Group getGroup() { return cGroup; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+
+		//("." ID)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"."
+		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
+	}
+
 	public class SmallJavaElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SmallJava");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -241,6 +301,8 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getPRIVATEPrivateKeyword_1_0() { return cPRIVATEPrivateKeyword_1_0; }
 	}
 	
+	private final NamespaceElements pNamespace;
+	private final QualifiedNameElements pQualifiedName;
 	private final SmallJavaElements pSmallJava;
 	private final VisibilityTypesElements unknownRuleVisibilityTypes;
 	private final AttributeElements pAttribute;
@@ -257,6 +319,8 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
+		this.pNamespace = new NamespaceElements();
+		this.pQualifiedName = new QualifiedNameElements();
 		this.pSmallJava = new SmallJavaElements();
 		this.unknownRuleVisibilityTypes = new VisibilityTypesElements();
 		this.pAttribute = new AttributeElements();
@@ -292,6 +356,26 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
+	//Namespace:
+	//	"namespace" name=QualifiedName smallJava=SmallJava;
+	public NamespaceElements getNamespaceAccess() {
+		return pNamespace;
+	}
+	
+	public ParserRule getNamespaceRule() {
+		return getNamespaceAccess().getRule();
+	}
+
+	//QualifiedName:
+	//	ID ("." ID)*;
+	public QualifiedNameElements getQualifiedNameAccess() {
+		return pQualifiedName;
+	}
+	
+	public ParserRule getQualifiedNameRule() {
+		return getQualifiedNameAccess().getRule();
+	}
+
 	//SmallJava:
 	//	visibility=VisibilityTypes? final?="final"? "class" name=ID ("extends" parent=[SmallJava])? "{" attribute+=Attribute*
 	//	"}";

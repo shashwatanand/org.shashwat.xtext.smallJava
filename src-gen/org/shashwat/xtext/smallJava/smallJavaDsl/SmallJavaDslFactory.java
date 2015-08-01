@@ -23,6 +23,15 @@ public interface SmallJavaDslFactory extends EFactory
   SmallJavaDslFactory eINSTANCE = org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslFactoryImpl.init();
 
   /**
+   * Returns a new object of class '<em>Namespace</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Namespace</em>'.
+   * @generated
+   */
+  Namespace createNamespace();
+
+  /**
    * Returns a new object of class '<em>Small Java</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

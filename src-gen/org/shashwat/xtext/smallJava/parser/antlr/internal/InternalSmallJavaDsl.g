@@ -45,7 +45,7 @@ import org.shashwat.xtext.smallJava.services.SmallJavaDslGrammarAccess;
     
     @Override
     protected String getFirstRuleName() {
-    	return "SmallJava";	
+    	return "Namespace";	
    	}
    	
    	@Override
@@ -60,6 +60,108 @@ import org.shashwat.xtext.smallJava.services.SmallJavaDslGrammarAccess;
         appendSkippedTokens();
     } 
 }
+
+
+
+
+// Entry rule entryRuleNamespace
+entryRuleNamespace returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getNamespaceRule()); }
+	 iv_ruleNamespace=ruleNamespace 
+	 { $current=$iv_ruleNamespace.current; } 
+	 EOF 
+;
+
+// Rule Namespace
+ruleNamespace returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='namespace' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getNamespaceAccess().getNamespaceKeyword_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNamespaceAccess().getNameQualifiedNameParserRuleCall_1_0()); 
+	    }
+		lv_name_1_0=ruleQualifiedName		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNamespaceRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"QualifiedName");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNamespaceAccess().getSmallJavaSmallJavaParserRuleCall_2_0()); 
+	    }
+		lv_smallJava_2_0=ruleSmallJava		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNamespaceRule());
+	        }
+       		set(
+       			$current, 
+       			"smallJava",
+        		lv_smallJava_2_0, 
+        		"SmallJava");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleQualifiedName
+entryRuleQualifiedName returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getQualifiedNameRule()); } 
+	 iv_ruleQualifiedName=ruleQualifiedName 
+	 { $current=$iv_ruleQualifiedName.current.getText(); }  
+	 EOF 
+;
+
+// Rule QualifiedName
+ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(    this_ID_0=RULE_ID    {
+		$current.merge(this_ID_0);
+    }
+
+    { 
+    newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
+    }
+(
+	kw='.' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
+    }
+    this_ID_2=RULE_ID    {
+		$current.merge(this_ID_2);
+    }
+
+    { 
+    newLeafNode(this_ID_2, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
+    }
+)*)
+    ;
+
 
 
 

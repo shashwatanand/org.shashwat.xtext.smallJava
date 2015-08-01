@@ -65,6 +65,7 @@ public class SmallJavaDslFactoryImpl extends EFactoryImpl implements SmallJavaDs
   {
     switch (eClass.getClassifierID())
     {
+      case SmallJavaDslPackage.NAMESPACE: return createNamespace();
       case SmallJavaDslPackage.SMALL_JAVA: return createSmallJava();
       case SmallJavaDslPackage.ATTRIBUTE: return createAttribute();
       case SmallJavaDslPackage.DATATYPE: return createDatatype();
@@ -106,6 +107,17 @@ public class SmallJavaDslFactoryImpl extends EFactoryImpl implements SmallJavaDs
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Namespace createNamespace()
+  {
+    NamespaceImpl namespace = new NamespaceImpl();
+    return namespace;
   }
 
   /**
