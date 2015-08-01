@@ -10,9 +10,11 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.shashwat.xtext.smallJava.smallJavaDsl.Attribute;
+import org.shashwat.xtext.smallJava.smallJavaDsl.Datatype;
 import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava;
 import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaDslFactory;
 import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaDslPackage;
+import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaType;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,6 +37,20 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
    * @generated
    */
   private EClass attributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass datatypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass smallJavaTypeEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -154,9 +170,19 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAttribute_Datatype()
+  public EReference getAttribute_Datatype()
   {
-    return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
+    return (EReference)attributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAttribute_Array()
+  {
+    return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -166,7 +192,37 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
    */
   public EAttribute getAttribute_Name()
   {
-    return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)attributeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDatatype()
+  {
+    return datatypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSmallJavaType()
+  {
+    return smallJavaTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSmallJavaType_Type()
+  {
+    return (EReference)smallJavaTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -205,8 +261,14 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
     createEReference(smallJavaEClass, SMALL_JAVA__ATTRIBUTE);
 
     attributeEClass = createEClass(ATTRIBUTE);
-    createEAttribute(attributeEClass, ATTRIBUTE__DATATYPE);
+    createEReference(attributeEClass, ATTRIBUTE__DATATYPE);
+    createEAttribute(attributeEClass, ATTRIBUTE__ARRAY);
     createEAttribute(attributeEClass, ATTRIBUTE__NAME);
+
+    datatypeEClass = createEClass(DATATYPE);
+
+    smallJavaTypeEClass = createEClass(SMALL_JAVA_TYPE);
+    createEReference(smallJavaTypeEClass, SMALL_JAVA_TYPE__TYPE);
   }
 
   /**
@@ -238,6 +300,7 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    smallJavaTypeEClass.getESuperTypes().add(this.getDatatype());
 
     // Initialize classes and features; add operations and parameters
     initEClass(smallJavaEClass, SmallJava.class, "SmallJava", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -246,8 +309,14 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
     initEReference(getSmallJava_Attribute(), this.getAttribute(), null, "attribute", null, 0, -1, SmallJava.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAttribute_Datatype(), ecorePackage.getEString(), "datatype", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttribute_Datatype(), this.getDatatype(), null, "datatype", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAttribute_Array(), ecorePackage.getEBoolean(), "array", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(datatypeEClass, Datatype.class, "Datatype", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(smallJavaTypeEClass, SmallJavaType.class, "SmallJavaType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSmallJavaType_Type(), this.getSmallJava(), null, "type", null, 0, 1, SmallJavaType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

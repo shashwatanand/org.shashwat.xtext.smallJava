@@ -85,6 +85,16 @@ public class SmallJavaDslAdapterFactory extends AdapterFactoryImpl
         return createAttributeAdapter();
       }
       @Override
+      public Adapter caseDatatype(Datatype object)
+      {
+        return createDatatypeAdapter();
+      }
+      @Override
+      public Adapter caseSmallJavaType(SmallJavaType object)
+      {
+        return createSmallJavaTypeAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -132,6 +142,36 @@ public class SmallJavaDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.shashwat.xtext.smallJava.smallJavaDsl.Datatype <em>Datatype</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.Datatype
+   * @generated
+   */
+  public Adapter createDatatypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaType <em>Small Java Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaType
+   * @generated
+   */
+  public Adapter createSmallJavaTypeAdapter()
   {
     return null;
   }

@@ -83,14 +83,16 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cDatatypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cDatatypeDatatypeParserRuleCall_0_0 = (RuleCall)cDatatypeAssignment_0.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cArrayAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cArrayLeftSquareBracketRightSquareBracketKeyword_1_0 = (Keyword)cArrayAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
 		//Attribute:
-		//	datatype=Datatype name=ID;
+		//	datatype=Datatype array?="[]"? name=ID;
 		@Override public ParserRule getRule() { return rule; }
 
-		//datatype=Datatype name=ID
+		//datatype=Datatype array?="[]"? name=ID
 		public Group getGroup() { return cGroup; }
 
 		//datatype=Datatype
@@ -99,15 +101,49 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Datatype
 		public RuleCall getDatatypeDatatypeParserRuleCall_0_0() { return cDatatypeDatatypeParserRuleCall_0_0; }
 
+		//array?="[]"?
+		public Assignment getArrayAssignment_1() { return cArrayAssignment_1; }
+
+		//"[]"
+		public Keyword getArrayLeftSquareBracketRightSquareBracketKeyword_1_0() { return cArrayLeftSquareBracketRightSquareBracketKeyword_1_0; }
+
 		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 	}
 
 	public class DatatypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Datatype");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cDatatypeAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final RuleCall cSimpleTypeParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final RuleCall cSmallJavaTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Datatype:
+		//	{Datatype} SimpleType | SmallJavaType;
+		@Override public ParserRule getRule() { return rule; }
+
+		//{Datatype} SimpleType | SmallJavaType
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//{Datatype} SimpleType
+		public Group getGroup_0() { return cGroup_0; }
+
+		//{Datatype}
+		public Action getDatatypeAction_0_0() { return cDatatypeAction_0_0; }
+
+		//SimpleType
+		public RuleCall getSimpleTypeParserRuleCall_0_1() { return cSimpleTypeParserRuleCall_0_1; }
+
+		//SmallJavaType
+		public RuleCall getSmallJavaTypeParserRuleCall_1() { return cSmallJavaTypeParserRuleCall_1; }
+	}
+
+	public class SimpleTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SimpleType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Keyword cStringKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cIntegerKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
@@ -115,7 +151,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDecimalKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
 		private final Keyword cBigDecimalKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
 		
-		//Datatype:
+		//SimpleType:
 		//	"String" | "Integer" | "Boolean" | "Decimal" | "BigDecimal";
 		@Override public ParserRule getRule() { return rule; }
 
@@ -137,11 +173,33 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"BigDecimal"
 		public Keyword getBigDecimalKeyword_4() { return cBigDecimalKeyword_4; }
 	}
+
+	public class SmallJavaTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SmallJavaType");
+		private final Assignment cTypeAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cTypeSmallJavaCrossReference_0 = (CrossReference)cTypeAssignment.eContents().get(0);
+		private final RuleCall cTypeSmallJavaIDTerminalRuleCall_0_1 = (RuleCall)cTypeSmallJavaCrossReference_0.eContents().get(1);
+		
+		//SmallJavaType:
+		//	type=[SmallJava];
+		@Override public ParserRule getRule() { return rule; }
+
+		//type=[SmallJava]
+		public Assignment getTypeAssignment() { return cTypeAssignment; }
+
+		//[SmallJava]
+		public CrossReference getTypeSmallJavaCrossReference_0() { return cTypeSmallJavaCrossReference_0; }
+
+		//ID
+		public RuleCall getTypeSmallJavaIDTerminalRuleCall_0_1() { return cTypeSmallJavaIDTerminalRuleCall_0_1; }
+	}
 	
 	
 	private final SmallJavaElements pSmallJava;
 	private final AttributeElements pAttribute;
 	private final DatatypeElements pDatatype;
+	private final SimpleTypeElements pSimpleType;
+	private final SmallJavaTypeElements pSmallJavaType;
 	
 	private final Grammar grammar;
 
@@ -155,6 +213,8 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pSmallJava = new SmallJavaElements();
 		this.pAttribute = new AttributeElements();
 		this.pDatatype = new DatatypeElements();
+		this.pSimpleType = new SimpleTypeElements();
+		this.pSmallJavaType = new SmallJavaTypeElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -195,7 +255,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Attribute:
-	//	datatype=Datatype name=ID;
+	//	datatype=Datatype array?="[]"? name=ID;
 	public AttributeElements getAttributeAccess() {
 		return pAttribute;
 	}
@@ -205,13 +265,33 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Datatype:
-	//	"String" | "Integer" | "Boolean" | "Decimal" | "BigDecimal";
+	//	{Datatype} SimpleType | SmallJavaType;
 	public DatatypeElements getDatatypeAccess() {
 		return pDatatype;
 	}
 	
 	public ParserRule getDatatypeRule() {
 		return getDatatypeAccess().getRule();
+	}
+
+	//SimpleType:
+	//	"String" | "Integer" | "Boolean" | "Decimal" | "BigDecimal";
+	public SimpleTypeElements getSimpleTypeAccess() {
+		return pSimpleType;
+	}
+	
+	public ParserRule getSimpleTypeRule() {
+		return getSimpleTypeAccess().getRule();
+	}
+
+	//SmallJavaType:
+	//	type=[SmallJava];
+	public SmallJavaTypeElements getSmallJavaTypeAccess() {
+		return pSmallJavaType;
+	}
+	
+	public ParserRule getSmallJavaTypeRule() {
+		return getSmallJavaTypeAccess().getRule();
 	}
 
 	//terminal ID:

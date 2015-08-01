@@ -66,6 +66,8 @@ public class SmallJavaDslFactoryImpl extends EFactoryImpl implements SmallJavaDs
     {
       case SmallJavaDslPackage.SMALL_JAVA: return createSmallJava();
       case SmallJavaDslPackage.ATTRIBUTE: return createAttribute();
+      case SmallJavaDslPackage.DATATYPE: return createDatatype();
+      case SmallJavaDslPackage.SMALL_JAVA_TYPE: return createSmallJavaType();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -91,6 +93,28 @@ public class SmallJavaDslFactoryImpl extends EFactoryImpl implements SmallJavaDs
   {
     AttributeImpl attribute = new AttributeImpl();
     return attribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Datatype createDatatype()
+  {
+    DatatypeImpl datatype = new DatatypeImpl();
+    return datatype;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SmallJavaType createSmallJavaType()
+  {
+    SmallJavaTypeImpl smallJavaType = new SmallJavaTypeImpl();
+    return smallJavaType;
   }
 
   /**

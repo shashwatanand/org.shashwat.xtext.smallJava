@@ -41,6 +41,24 @@ public interface SmallJavaDslFactory extends EFactory
   Attribute createAttribute();
 
   /**
+   * Returns a new object of class '<em>Datatype</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Datatype</em>'.
+   * @generated
+   */
+  Datatype createDatatype();
+
+  /**
+   * Returns a new object of class '<em>Small Java Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Small Java Type</em>'.
+   * @generated
+   */
+  SmallJavaType createSmallJavaType();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

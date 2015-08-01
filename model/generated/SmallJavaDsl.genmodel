@@ -13,8 +13,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmallJavaDsl.ecore#//SmallJava/attribute"/>
     </genClasses>
     <genClasses ecoreClass="SmallJavaDsl.ecore#//Attribute">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmallJavaDsl.ecore#//Attribute/datatype"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmallJavaDsl.ecore#//Attribute/datatype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmallJavaDsl.ecore#//Attribute/array"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmallJavaDsl.ecore#//Attribute/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SmallJavaDsl.ecore#//Datatype"/>
+    <genClasses ecoreClass="SmallJavaDsl.ecore#//SmallJavaType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SmallJavaDsl.ecore#//SmallJavaType/type"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

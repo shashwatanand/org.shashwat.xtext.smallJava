@@ -8,7 +8,13 @@ SmallJava:
 	'}';
 
 Attribute:
-	datatype=Datatype name=ID;
+	(datatype=Datatype) (array?='[]')? (name=ID);
 	
 Datatype:
+	{Datatype} SimpleType | SmallJavaType;
+	
+SimpleType:
 	'String' | 'Integer' | 'Boolean' | 'Decimal' | 'BigDecimal';
+
+SmallJavaType:
+	type=[SmallJava];

@@ -26,9 +26,20 @@ public class SmallJavaDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if(ruleCall.getRule() == grammarAccess.getSimpleTypeRule())
+			return getSimpleTypeToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * SimpleType:
+	 * 	'String' | 'Integer' | 'Boolean' | 'Decimal' | 'BigDecimal';
+	 */
+	protected String getSimpleTypeToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "String";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

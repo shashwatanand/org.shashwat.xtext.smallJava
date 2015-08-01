@@ -183,9 +183,24 @@ ruleAttribute returns [EObject current=null]
 )
 )(
 (
-		lv_name_1_0=RULE_ID
+		lv_array_1_0=	'[]' 
+    {
+        newLeafNode(lv_array_1_0, grammarAccess.getAttributeAccess().getArrayLeftSquareBracketRightSquareBracketKeyword_1_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAttributeRule());
+	        }
+       		setWithLastConsumed($current, "array", true, "[]");
+	    }
+
+)
+)?(
+(
+		lv_name_2_0=RULE_ID
 		{
-			newLeafNode(lv_name_1_0, grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_2_0, grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -194,7 +209,7 @@ ruleAttribute returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_1_0, 
+        		lv_name_2_0, 
         		"ID");
 	    }
 
@@ -207,16 +222,61 @@ ruleAttribute returns [EObject current=null]
 
 
 // Entry rule entryRuleDatatype
-entryRuleDatatype returns [String current=null] 
+entryRuleDatatype returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getDatatypeRule()); } 
+	{ newCompositeNode(grammarAccess.getDatatypeRule()); }
 	 iv_ruleDatatype=ruleDatatype 
-	 { $current=$iv_ruleDatatype.current.getText(); }  
+	 { $current=$iv_ruleDatatype.current; } 
 	 EOF 
 ;
 
 // Rule Datatype
-ruleDatatype returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+ruleDatatype returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getDatatypeAccess().getDatatypeAction_0_0(),
+            $current);
+    }
+)
+    { 
+        newCompositeNode(grammarAccess.getDatatypeAccess().getSimpleTypeParserRuleCall_0_1()); 
+    }
+ruleSimpleType
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)
+    |
+    { 
+        newCompositeNode(grammarAccess.getDatatypeAccess().getSmallJavaTypeParserRuleCall_1()); 
+    }
+    this_SmallJavaType_2=ruleSmallJavaType
+    { 
+        $current = $this_SmallJavaType_2.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleSimpleType
+entryRuleSimpleType returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getSimpleTypeRule()); } 
+	 iv_ruleSimpleType=ruleSimpleType 
+	 { $current=$iv_ruleSimpleType.current.getText(); }  
+	 EOF 
+;
+
+// Rule SimpleType
+ruleSimpleType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
@@ -224,38 +284,72 @@ ruleDatatype returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 	kw='String' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getDatatypeAccess().getStringKeyword_0()); 
+        newLeafNode(kw, grammarAccess.getSimpleTypeAccess().getStringKeyword_0()); 
     }
 
     |
 	kw='Integer' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getDatatypeAccess().getIntegerKeyword_1()); 
+        newLeafNode(kw, grammarAccess.getSimpleTypeAccess().getIntegerKeyword_1()); 
     }
 
     |
 	kw='Boolean' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getDatatypeAccess().getBooleanKeyword_2()); 
+        newLeafNode(kw, grammarAccess.getSimpleTypeAccess().getBooleanKeyword_2()); 
     }
 
     |
 	kw='Decimal' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getDatatypeAccess().getDecimalKeyword_3()); 
+        newLeafNode(kw, grammarAccess.getSimpleTypeAccess().getDecimalKeyword_3()); 
     }
 
     |
 	kw='BigDecimal' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getDatatypeAccess().getBigDecimalKeyword_4()); 
+        newLeafNode(kw, grammarAccess.getSimpleTypeAccess().getBigDecimalKeyword_4()); 
     }
 )
     ;
+
+
+
+
+
+// Entry rule entryRuleSmallJavaType
+entryRuleSmallJavaType returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getSmallJavaTypeRule()); }
+	 iv_ruleSmallJavaType=ruleSmallJavaType 
+	 { $current=$iv_ruleSmallJavaType.current; } 
+	 EOF 
+;
+
+// Rule SmallJavaType
+ruleSmallJavaType returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSmallJavaTypeRule());
+	        }
+        }
+	otherlv_0=RULE_ID
+	{
+		newLeafNode(otherlv_0, grammarAccess.getSmallJavaTypeAccess().getTypeSmallJavaCrossReference_0()); 
+	}
+
+)
+)
+;
 
 
 
