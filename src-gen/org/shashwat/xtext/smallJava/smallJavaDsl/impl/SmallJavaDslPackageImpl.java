@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.shashwat.xtext.smallJava.smallJavaDsl.Attribute;
 import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava;
 import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaDslFactory;
 import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaDslPackage;
@@ -27,6 +28,13 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
    * @generated
    */
   private EClass smallJavaEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass attributeEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -126,6 +134,36 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getSmallJava_Attribute()
+  {
+    return (EReference)smallJavaEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAttribute()
+  {
+    return attributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAttribute_Name()
+  {
+    return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public SmallJavaDslFactory getSmallJavaDslFactory()
   {
     return (SmallJavaDslFactory)getEFactoryInstance();
@@ -154,6 +192,10 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
     smallJavaEClass = createEClass(SMALL_JAVA);
     createEAttribute(smallJavaEClass, SMALL_JAVA__NAME);
     createEReference(smallJavaEClass, SMALL_JAVA__PARENT);
+    createEReference(smallJavaEClass, SMALL_JAVA__ATTRIBUTE);
+
+    attributeEClass = createEClass(ATTRIBUTE);
+    createEAttribute(attributeEClass, ATTRIBUTE__NAME);
   }
 
   /**
@@ -190,6 +232,10 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
     initEClass(smallJavaEClass, SmallJava.class, "SmallJava", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSmallJava_Name(), ecorePackage.getEString(), "name", null, 0, 1, SmallJava.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSmallJava_Parent(), this.getSmallJava(), null, "parent", null, 0, 1, SmallJava.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSmallJava_Attribute(), this.getAttribute(), null, "attribute", null, 0, 1, SmallJava.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

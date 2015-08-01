@@ -120,10 +120,67 @@ ruleSmallJava returns [EObject current=null]
     {
     	newLeafNode(otherlv_4, grammarAccess.getSmallJavaAccess().getLeftCurlyBracketKeyword_4());
     }
-	otherlv_5='}' 
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSmallJavaAccess().getAttributeAttributeParserRuleCall_5_0()); 
+	    }
+		lv_attribute_5_0=ruleAttribute		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSmallJavaRule());
+	        }
+       		set(
+       			$current, 
+       			"attribute",
+        		lv_attribute_5_0, 
+        		"Attribute");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_6='}' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getSmallJavaAccess().getRightCurlyBracketKeyword_5());
+    	newLeafNode(otherlv_6, grammarAccess.getSmallJavaAccess().getRightCurlyBracketKeyword_6());
     }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleAttribute
+entryRuleAttribute returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getAttributeRule()); }
+	 iv_ruleAttribute=ruleAttribute 
+	 { $current=$iv_ruleAttribute.current; } 
+	 EOF 
+;
+
+// Rule Attribute
+ruleAttribute returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		lv_name_0_0=RULE_ID
+		{
+			newLeafNode(lv_name_0_0, grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAttributeRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_0_0, 
+        		"ID");
+	    }
+
+)
 )
 ;
 

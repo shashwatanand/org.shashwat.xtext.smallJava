@@ -10,6 +10,10 @@
     <genClasses ecoreClass="SmallJavaDsl.ecore#//SmallJava">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmallJavaDsl.ecore#//SmallJava/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SmallJavaDsl.ecore#//SmallJava/parent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmallJavaDsl.ecore#//SmallJava/attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="SmallJavaDsl.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmallJavaDsl.ecore#//Attribute/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

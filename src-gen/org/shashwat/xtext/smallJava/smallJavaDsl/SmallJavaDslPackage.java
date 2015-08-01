@@ -85,13 +85,50 @@ public interface SmallJavaDslPackage extends EPackage
   int SMALL_JAVA__PARENT = 1;
 
   /**
+   * The feature id for the '<em><b>Attribute</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SMALL_JAVA__ATTRIBUTE = 2;
+
+  /**
    * The number of structural features of the '<em>Small Java</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SMALL_JAVA_FEATURE_COUNT = 2;
+  int SMALL_JAVA_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.AttributeImpl <em>Attribute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.AttributeImpl
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslPackageImpl#getAttribute()
+   * @generated
+   */
+  int ATTRIBUTE = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Attribute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_FEATURE_COUNT = 1;
 
 
   /**
@@ -125,6 +162,38 @@ public interface SmallJavaDslPackage extends EPackage
    * @generated
    */
   EReference getSmallJava_Parent();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava#getAttribute <em>Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Attribute</em>'.
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava#getAttribute()
+   * @see #getSmallJava()
+   * @generated
+   */
+  EReference getSmallJava_Attribute();
+
+  /**
+   * Returns the meta object for class '{@link org.shashwat.xtext.smallJava.smallJavaDsl.Attribute <em>Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Attribute</em>'.
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.Attribute
+   * @generated
+   */
+  EClass getAttribute();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.shashwat.xtext.smallJava.smallJavaDsl.Attribute#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.Attribute#getName()
+   * @see #getAttribute()
+   * @generated
+   */
+  EAttribute getAttribute_Name();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -174,6 +243,32 @@ public interface SmallJavaDslPackage extends EPackage
      * @generated
      */
     EReference SMALL_JAVA__PARENT = eINSTANCE.getSmallJava_Parent();
+
+    /**
+     * The meta object literal for the '<em><b>Attribute</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SMALL_JAVA__ATTRIBUTE = eINSTANCE.getSmallJava_Attribute();
+
+    /**
+     * The meta object literal for the '{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.AttributeImpl <em>Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.AttributeImpl
+     * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslPackageImpl#getAttribute()
+     * @generated
+     */
+    EClass ATTRIBUTE = eINSTANCE.getAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATTRIBUTE__NAME = eINSTANCE.getAttribute_Name();
 
   }
 

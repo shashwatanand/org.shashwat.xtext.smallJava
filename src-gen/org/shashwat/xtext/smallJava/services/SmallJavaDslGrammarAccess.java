@@ -29,13 +29,15 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cParentSmallJavaCrossReference_3_0 = (CrossReference)cParentAssignment_3.eContents().get(0);
 		private final RuleCall cParentSmallJavaIDTerminalRuleCall_3_0_1 = (RuleCall)cParentSmallJavaCrossReference_3_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cAttributeAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cAttributeAttributeParserRuleCall_5_0 = (RuleCall)cAttributeAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//SmallJava:
-		//	"class" name=ID "extends" parent=[SmallJava] "{" "}";
+		//	"class" name=ID "extends" parent=[SmallJava] "{" attribute=Attribute "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"class" name=ID "extends" parent=[SmallJava] "{" "}"
+		//"class" name=ID "extends" parent=[SmallJava] "{" attribute=Attribute "}"
 		public Group getGroup() { return cGroup; }
 
 		//"class"
@@ -62,12 +64,35 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 
+		//attribute=Attribute
+		public Assignment getAttributeAssignment_5() { return cAttributeAssignment_5; }
+
+		//Attribute
+		public RuleCall getAttributeAttributeParserRuleCall_5_0() { return cAttributeAttributeParserRuleCall_5_0; }
+
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
+
+	public class AttributeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Attribute");
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		
+		//Attribute:
+		//	name=ID;
+		@Override public ParserRule getRule() { return rule; }
+
+		//name=ID
+		public Assignment getNameAssignment() { return cNameAssignment; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
 	}
 	
 	
 	private final SmallJavaElements pSmallJava;
+	private final AttributeElements pAttribute;
 	
 	private final Grammar grammar;
 
@@ -79,6 +104,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pSmallJava = new SmallJavaElements();
+		this.pAttribute = new AttributeElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -109,13 +135,23 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//SmallJava:
-	//	"class" name=ID "extends" parent=[SmallJava] "{" "}";
+	//	"class" name=ID "extends" parent=[SmallJava] "{" attribute=Attribute "}";
 	public SmallJavaElements getSmallJavaAccess() {
 		return pSmallJava;
 	}
 	
 	public ParserRule getSmallJavaRule() {
 		return getSmallJavaAccess().getRule();
+	}
+
+	//Attribute:
+	//	name=ID;
+	public AttributeElements getAttributeAccess() {
+		return pAttribute;
+	}
+	
+	public ParserRule getAttributeRule() {
+		return getAttributeAccess().getRule();
 	}
 
 	//terminal ID:

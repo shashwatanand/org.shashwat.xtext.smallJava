@@ -4,4 +4,8 @@ generate smallJavaDsl "http://www.shashwat.org/xtext/smallJava/SmallJavaDsl"
 
 SmallJava:
 	'class' name=ID 'extends' parent=[SmallJava] '{' 
+		attribute=Attribute
 	'}';
+
+Attribute:
+	name=ID;

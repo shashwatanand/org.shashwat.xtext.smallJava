@@ -65,6 +65,7 @@ public class SmallJavaDslFactoryImpl extends EFactoryImpl implements SmallJavaDs
     switch (eClass.getClassifierID())
     {
       case SmallJavaDslPackage.SMALL_JAVA: return createSmallJava();
+      case SmallJavaDslPackage.ATTRIBUTE: return createAttribute();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -79,6 +80,17 @@ public class SmallJavaDslFactoryImpl extends EFactoryImpl implements SmallJavaDs
   {
     SmallJavaImpl smallJava = new SmallJavaImpl();
     return smallJava;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Attribute createAttribute()
+  {
+    AttributeImpl attribute = new AttributeImpl();
+    return attribute;
   }
 
   /**
