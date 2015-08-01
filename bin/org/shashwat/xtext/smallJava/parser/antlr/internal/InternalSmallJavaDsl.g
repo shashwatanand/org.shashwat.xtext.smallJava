@@ -99,9 +99,9 @@ ruleSmallJava returns [EObject current=null]
 	    }
 
 )
-)	otherlv_2='extends' 
+)(	otherlv_2='extends' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getSmallJavaAccess().getExtendsKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getSmallJavaAccess().getExtendsKeyword_2_0());
     }
 (
 (
@@ -112,18 +112,18 @@ ruleSmallJava returns [EObject current=null]
         }
 	otherlv_3=RULE_ID
 	{
-		newLeafNode(otherlv_3, grammarAccess.getSmallJavaAccess().getParentSmallJavaCrossReference_3_0()); 
+		newLeafNode(otherlv_3, grammarAccess.getSmallJavaAccess().getParentSmallJavaCrossReference_2_1_0()); 
 	}
 
 )
-)	otherlv_4='{' 
+))?	otherlv_4='{' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getSmallJavaAccess().getLeftCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_4, grammarAccess.getSmallJavaAccess().getLeftCurlyBracketKeyword_3());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSmallJavaAccess().getAttributeAttributeParserRuleCall_5_0()); 
+	        newCompositeNode(grammarAccess.getSmallJavaAccess().getAttributeAttributeParserRuleCall_4_0()); 
 	    }
 		lv_attribute_5_0=ruleAttribute		{
 	        if ($current==null) {
@@ -140,7 +140,7 @@ ruleSmallJava returns [EObject current=null]
 )
 )	otherlv_6='}' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getSmallJavaAccess().getRightCurlyBracketKeyword_6());
+    	newLeafNode(otherlv_6, grammarAccess.getSmallJavaAccess().getRightCurlyBracketKeyword_5());
     }
 )
 ;

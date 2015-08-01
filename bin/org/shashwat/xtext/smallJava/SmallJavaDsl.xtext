@@ -3,7 +3,7 @@ grammar org.shashwat.xtext.smallJava.SmallJavaDsl with org.eclipse.xtext.common.
 generate smallJavaDsl "http://www.shashwat.org/xtext/smallJava/SmallJavaDsl"
 
 SmallJava:
-	'class' name=ID 'extends' parent=[SmallJava] '{' 
+	'class' name=ID ('extends' parent=[SmallJava])? '{' 
 		attribute=Attribute
 	'}';
 

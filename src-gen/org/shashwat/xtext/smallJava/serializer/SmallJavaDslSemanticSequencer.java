@@ -58,22 +58,9 @@ public class SmallJavaDslSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (name=ID parent=[SmallJava|ID] attribute=Attribute)
+	 *     (name=ID parent=[SmallJava|ID]? attribute=Attribute)
 	 */
 	protected void sequence_SmallJava(EObject context, SmallJava semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SmallJavaDslPackage.Literals.SMALL_JAVA__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmallJavaDslPackage.Literals.SMALL_JAVA__NAME));
-			if(transientValues.isValueTransient(semanticObject, SmallJavaDslPackage.Literals.SMALL_JAVA__PARENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmallJavaDslPackage.Literals.SMALL_JAVA__PARENT));
-			if(transientValues.isValueTransient(semanticObject, SmallJavaDslPackage.Literals.SMALL_JAVA__ATTRIBUTE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmallJavaDslPackage.Literals.SMALL_JAVA__ATTRIBUTE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getSmallJavaAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getSmallJavaAccess().getParentSmallJavaIDTerminalRuleCall_3_0_1(), semanticObject.getParent());
-		feeder.accept(grammarAccess.getSmallJavaAccess().getAttributeAttributeParserRuleCall_5_0(), semanticObject.getAttribute());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 }

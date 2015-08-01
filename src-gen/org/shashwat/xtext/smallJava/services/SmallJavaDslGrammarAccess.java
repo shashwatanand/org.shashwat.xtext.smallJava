@@ -24,20 +24,21 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cClassKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cExtendsKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cParentAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cParentSmallJavaCrossReference_3_0 = (CrossReference)cParentAssignment_3.eContents().get(0);
-		private final RuleCall cParentSmallJavaIDTerminalRuleCall_3_0_1 = (RuleCall)cParentSmallJavaCrossReference_3_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cAttributeAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cAttributeAttributeParserRuleCall_5_0 = (RuleCall)cAttributeAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cExtendsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cParentAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final CrossReference cParentSmallJavaCrossReference_2_1_0 = (CrossReference)cParentAssignment_2_1.eContents().get(0);
+		private final RuleCall cParentSmallJavaIDTerminalRuleCall_2_1_0_1 = (RuleCall)cParentSmallJavaCrossReference_2_1_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAttributeAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cAttributeAttributeParserRuleCall_4_0 = (RuleCall)cAttributeAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//SmallJava:
-		//	"class" name=ID "extends" parent=[SmallJava] "{" attribute=Attribute "}";
+		//	"class" name=ID ("extends" parent=[SmallJava])? "{" attribute=Attribute "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"class" name=ID "extends" parent=[SmallJava] "{" attribute=Attribute "}"
+		//"class" name=ID ("extends" parent=[SmallJava])? "{" attribute=Attribute "}"
 		public Group getGroup() { return cGroup; }
 
 		//"class"
@@ -49,29 +50,32 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
+		//("extends" parent=[SmallJava])?
+		public Group getGroup_2() { return cGroup_2; }
+
 		//"extends"
-		public Keyword getExtendsKeyword_2() { return cExtendsKeyword_2; }
+		public Keyword getExtendsKeyword_2_0() { return cExtendsKeyword_2_0; }
 
 		//parent=[SmallJava]
-		public Assignment getParentAssignment_3() { return cParentAssignment_3; }
+		public Assignment getParentAssignment_2_1() { return cParentAssignment_2_1; }
 
 		//[SmallJava]
-		public CrossReference getParentSmallJavaCrossReference_3_0() { return cParentSmallJavaCrossReference_3_0; }
+		public CrossReference getParentSmallJavaCrossReference_2_1_0() { return cParentSmallJavaCrossReference_2_1_0; }
 
 		//ID
-		public RuleCall getParentSmallJavaIDTerminalRuleCall_3_0_1() { return cParentSmallJavaIDTerminalRuleCall_3_0_1; }
+		public RuleCall getParentSmallJavaIDTerminalRuleCall_2_1_0_1() { return cParentSmallJavaIDTerminalRuleCall_2_1_0_1; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
 		//attribute=Attribute
-		public Assignment getAttributeAssignment_5() { return cAttributeAssignment_5; }
+		public Assignment getAttributeAssignment_4() { return cAttributeAssignment_4; }
 
 		//Attribute
-		public RuleCall getAttributeAttributeParserRuleCall_5_0() { return cAttributeAttributeParserRuleCall_5_0; }
+		public RuleCall getAttributeAttributeParserRuleCall_4_0() { return cAttributeAttributeParserRuleCall_4_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class AttributeElements extends AbstractParserRuleElementFinder {
@@ -135,7 +139,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//SmallJava:
-	//	"class" name=ID "extends" parent=[SmallJava] "{" attribute=Attribute "}";
+	//	"class" name=ID ("extends" parent=[SmallJava])? "{" attribute=Attribute "}";
 	public SmallJavaElements getSmallJavaAccess() {
 		return pSmallJava;
 	}
