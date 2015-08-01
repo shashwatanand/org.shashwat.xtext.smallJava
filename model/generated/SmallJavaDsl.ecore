@@ -4,8 +4,13 @@
     nsPrefix="smallJavaDsl">
   <eClassifiers xsi:type="ecore:EClass" name="Namespace">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//Import" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="smallJava" eType="#//SmallJava"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Import">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SmallJava">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//VisibilityTypes"/>

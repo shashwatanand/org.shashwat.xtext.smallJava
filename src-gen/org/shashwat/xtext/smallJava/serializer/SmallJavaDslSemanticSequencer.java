@@ -19,6 +19,7 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import org.shashwat.xtext.smallJava.services.SmallJavaDslGrammarAccess;
 import org.shashwat.xtext.smallJava.smallJavaDsl.Attribute;
 import org.shashwat.xtext.smallJava.smallJavaDsl.Datatype;
+import org.shashwat.xtext.smallJava.smallJavaDsl.Import;
 import org.shashwat.xtext.smallJava.smallJavaDsl.Namespace;
 import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava;
 import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaDslPackage;
@@ -38,6 +39,9 @@ public class SmallJavaDslSemanticSequencer extends AbstractDelegatingSemanticSeq
 				return; 
 			case SmallJavaDslPackage.DATATYPE:
 				sequence_Datatype(context, (Datatype) semanticObject); 
+				return; 
+			case SmallJavaDslPackage.IMPORT:
+				sequence_Import(context, (Import) semanticObject); 
 				return; 
 			case SmallJavaDslPackage.NAMESPACE:
 				sequence_Namespace(context, (Namespace) semanticObject); 
@@ -72,20 +76,26 @@ public class SmallJavaDslSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName smallJava=SmallJava)
+	 *     importedNamespace=QualifiedNameWithWildCards
 	 */
-	protected void sequence_Namespace(EObject context, Namespace semanticObject) {
+	protected void sequence_Import(EObject context, Import semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SmallJavaDslPackage.Literals.NAMESPACE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmallJavaDslPackage.Literals.NAMESPACE__NAME));
-			if(transientValues.isValueTransient(semanticObject, SmallJavaDslPackage.Literals.NAMESPACE__SMALL_JAVA) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmallJavaDslPackage.Literals.NAMESPACE__SMALL_JAVA));
+			if(transientValues.isValueTransient(semanticObject, SmallJavaDslPackage.Literals.IMPORT__IMPORTED_NAMESPACE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmallJavaDslPackage.Literals.IMPORT__IMPORTED_NAMESPACE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getNamespaceAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getNamespaceAccess().getSmallJavaSmallJavaParserRuleCall_2_0(), semanticObject.getSmallJava());
+		feeder.accept(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildCardsParserRuleCall_1_0(), semanticObject.getImportedNamespace());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=QualifiedName imports+=Import* smallJava=SmallJava)
+	 */
+	protected void sequence_Namespace(EObject context, Namespace semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

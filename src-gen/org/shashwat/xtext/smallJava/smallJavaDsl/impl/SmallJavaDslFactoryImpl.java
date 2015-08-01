@@ -66,6 +66,7 @@ public class SmallJavaDslFactoryImpl extends EFactoryImpl implements SmallJavaDs
     switch (eClass.getClassifierID())
     {
       case SmallJavaDslPackage.NAMESPACE: return createNamespace();
+      case SmallJavaDslPackage.IMPORT: return createImport();
       case SmallJavaDslPackage.SMALL_JAVA: return createSmallJava();
       case SmallJavaDslPackage.ATTRIBUTE: return createAttribute();
       case SmallJavaDslPackage.DATATYPE: return createDatatype();
@@ -118,6 +119,17 @@ public class SmallJavaDslFactoryImpl extends EFactoryImpl implements SmallJavaDs
   {
     NamespaceImpl namespace = new NamespaceImpl();
     return namespace;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Import createImport()
+  {
+    ImportImpl import_ = new ImportImpl();
+    return import_;
   }
 
   /**

@@ -2,8 +2,12 @@
  */
 package org.shashwat.xtext.smallJava.smallJavaDsl.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -11,6 +15,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.shashwat.xtext.smallJava.smallJavaDsl.Import;
 import org.shashwat.xtext.smallJava.smallJavaDsl.Namespace;
 import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava;
 import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaDslPackage;
@@ -24,6 +32,7 @@ import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaDslPackage;
  * </p>
  * <ul>
  *   <li>{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.NamespaceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.NamespaceImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.NamespaceImpl#getSmallJava <em>Small Java</em>}</li>
  * </ul>
  *
@@ -50,6 +59,16 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImports()
+   * @generated
+   * @ordered
+   */
+  protected EList<Import> imports;
 
   /**
    * The cached value of the '{@link #getSmallJava() <em>Small Java</em>}' containment reference.
@@ -110,6 +129,20 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Import> getImports()
+  {
+    if (imports == null)
+    {
+      imports = new EObjectContainmentEList<Import>(Import.class, this, SmallJavaDslPackage.NAMESPACE__IMPORTS);
+    }
+    return imports;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public SmallJava getSmallJava()
   {
     return smallJava;
@@ -163,6 +196,8 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
   {
     switch (featureID)
     {
+      case SmallJavaDslPackage.NAMESPACE__IMPORTS:
+        return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
       case SmallJavaDslPackage.NAMESPACE__SMALL_JAVA:
         return basicSetSmallJava(null, msgs);
     }
@@ -181,6 +216,8 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
     {
       case SmallJavaDslPackage.NAMESPACE__NAME:
         return getName();
+      case SmallJavaDslPackage.NAMESPACE__IMPORTS:
+        return getImports();
       case SmallJavaDslPackage.NAMESPACE__SMALL_JAVA:
         return getSmallJava();
     }
@@ -192,6 +229,7 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -199,6 +237,10 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
     {
       case SmallJavaDslPackage.NAMESPACE__NAME:
         setName((String)newValue);
+        return;
+      case SmallJavaDslPackage.NAMESPACE__IMPORTS:
+        getImports().clear();
+        getImports().addAll((Collection<? extends Import>)newValue);
         return;
       case SmallJavaDslPackage.NAMESPACE__SMALL_JAVA:
         setSmallJava((SmallJava)newValue);
@@ -220,6 +262,9 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
       case SmallJavaDslPackage.NAMESPACE__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case SmallJavaDslPackage.NAMESPACE__IMPORTS:
+        getImports().clear();
+        return;
       case SmallJavaDslPackage.NAMESPACE__SMALL_JAVA:
         setSmallJava((SmallJava)null);
         return;
@@ -239,6 +284,8 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
     {
       case SmallJavaDslPackage.NAMESPACE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case SmallJavaDslPackage.NAMESPACE__IMPORTS:
+        return imports != null && !imports.isEmpty();
       case SmallJavaDslPackage.NAMESPACE__SMALL_JAVA:
         return smallJava != null;
     }

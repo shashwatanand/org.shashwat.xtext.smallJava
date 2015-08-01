@@ -2,6 +2,8 @@
  */
 package org.shashwat.xtext.smallJava.smallJavaDsl;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.shashwat.xtext.smallJava.smallJavaDsl.Namespace#getName <em>Name</em>}</li>
+ *   <li>{@link org.shashwat.xtext.smallJava.smallJavaDsl.Namespace#getImports <em>Imports</em>}</li>
  *   <li>{@link org.shashwat.xtext.smallJava.smallJavaDsl.Namespace#getSmallJava <em>Small Java</em>}</li>
  * </ul>
  *
@@ -48,6 +51,22 @@ public interface Namespace extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
+   * The list contents are of type {@link org.shashwat.xtext.smallJava.smallJavaDsl.Import}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Imports</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Imports</em>' containment reference list.
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaDslPackage#getNamespace_Imports()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Import> getImports();
 
   /**
    * Returns the value of the '<em><b>Small Java</b></em>' containment reference.

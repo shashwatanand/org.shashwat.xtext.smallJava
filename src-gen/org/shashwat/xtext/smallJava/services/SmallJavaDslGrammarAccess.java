@@ -24,14 +24,16 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNamespaceKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cSmallJavaAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cSmallJavaSmallJavaParserRuleCall_2_0 = (RuleCall)cSmallJavaAssignment_2.eContents().get(0);
+		private final Assignment cImportsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cImportsImportParserRuleCall_2_0 = (RuleCall)cImportsAssignment_2.eContents().get(0);
+		private final Assignment cSmallJavaAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cSmallJavaSmallJavaParserRuleCall_3_0 = (RuleCall)cSmallJavaAssignment_3.eContents().get(0);
 		
 		//Namespace:
-		//	"namespace" name=QualifiedName smallJava=SmallJava;
+		//	"namespace" name=QualifiedName imports+=Import* smallJava=SmallJava;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"namespace" name=QualifiedName smallJava=SmallJava
+		//"namespace" name=QualifiedName imports+=Import* smallJava=SmallJava
 		public Group getGroup() { return cGroup; }
 
 		//"namespace"
@@ -43,11 +45,41 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
 
+		//imports+=Import*
+		public Assignment getImportsAssignment_2() { return cImportsAssignment_2; }
+
+		//Import
+		public RuleCall getImportsImportParserRuleCall_2_0() { return cImportsImportParserRuleCall_2_0; }
+
 		//smallJava=SmallJava
-		public Assignment getSmallJavaAssignment_2() { return cSmallJavaAssignment_2; }
+		public Assignment getSmallJavaAssignment_3() { return cSmallJavaAssignment_3; }
 
 		//SmallJava
-		public RuleCall getSmallJavaSmallJavaParserRuleCall_2_0() { return cSmallJavaSmallJavaParserRuleCall_2_0; }
+		public RuleCall getSmallJavaSmallJavaParserRuleCall_3_0() { return cSmallJavaSmallJavaParserRuleCall_3_0; }
+	}
+
+	public class ImportElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Import");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cImportedNamespaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cImportedNamespaceQualifiedNameWithWildCardsParserRuleCall_1_0 = (RuleCall)cImportedNamespaceAssignment_1.eContents().get(0);
+		
+		//Import:
+		//	"import" importedNamespace=QualifiedNameWithWildCards;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"import" importedNamespace=QualifiedNameWithWildCards
+		public Group getGroup() { return cGroup; }
+
+		//"import"
+		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
+
+		//importedNamespace=QualifiedNameWithWildCards
+		public Assignment getImportedNamespaceAssignment_1() { return cImportedNamespaceAssignment_1; }
+
+		//QualifiedNameWithWildCards
+		public RuleCall getImportedNamespaceQualifiedNameWithWildCardsParserRuleCall_1_0() { return cImportedNamespaceQualifiedNameWithWildCardsParserRuleCall_1_0; }
 	}
 
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
@@ -76,6 +108,26 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
+	}
+
+	public class QualifiedNameWithWildCardsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedNameWithWildCards");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cQualifiedNameParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cFullStopAsteriskKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//QualifiedNameWithWildCards:
+		//	QualifiedName ".*"?;
+		@Override public ParserRule getRule() { return rule; }
+
+		//QualifiedName ".*"?
+		public Group getGroup() { return cGroup; }
+
+		//QualifiedName
+		public RuleCall getQualifiedNameParserRuleCall_0() { return cQualifiedNameParserRuleCall_0; }
+
+		//".*"?
+		public Keyword getFullStopAsteriskKeyword_1() { return cFullStopAsteriskKeyword_1; }
 	}
 
 	public class SmallJavaElements extends AbstractParserRuleElementFinder {
@@ -302,7 +354,9 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	private final NamespaceElements pNamespace;
+	private final ImportElements pImport;
 	private final QualifiedNameElements pQualifiedName;
+	private final QualifiedNameWithWildCardsElements pQualifiedNameWithWildCards;
 	private final SmallJavaElements pSmallJava;
 	private final VisibilityTypesElements unknownRuleVisibilityTypes;
 	private final AttributeElements pAttribute;
@@ -320,7 +374,9 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pNamespace = new NamespaceElements();
+		this.pImport = new ImportElements();
 		this.pQualifiedName = new QualifiedNameElements();
+		this.pQualifiedNameWithWildCards = new QualifiedNameWithWildCardsElements();
 		this.pSmallJava = new SmallJavaElements();
 		this.unknownRuleVisibilityTypes = new VisibilityTypesElements();
 		this.pAttribute = new AttributeElements();
@@ -357,13 +413,23 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Namespace:
-	//	"namespace" name=QualifiedName smallJava=SmallJava;
+	//	"namespace" name=QualifiedName imports+=Import* smallJava=SmallJava;
 	public NamespaceElements getNamespaceAccess() {
 		return pNamespace;
 	}
 	
 	public ParserRule getNamespaceRule() {
 		return getNamespaceAccess().getRule();
+	}
+
+	//Import:
+	//	"import" importedNamespace=QualifiedNameWithWildCards;
+	public ImportElements getImportAccess() {
+		return pImport;
+	}
+	
+	public ParserRule getImportRule() {
+		return getImportAccess().getRule();
 	}
 
 	//QualifiedName:
@@ -374,6 +440,16 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getQualifiedNameRule() {
 		return getQualifiedNameAccess().getRule();
+	}
+
+	//QualifiedNameWithWildCards:
+	//	QualifiedName ".*"?;
+	public QualifiedNameWithWildCardsElements getQualifiedNameWithWildCardsAccess() {
+		return pQualifiedNameWithWildCards;
+	}
+	
+	public ParserRule getQualifiedNameWithWildCardsRule() {
+		return getQualifiedNameWithWildCardsAccess().getRule();
 	}
 
 	//SmallJava:

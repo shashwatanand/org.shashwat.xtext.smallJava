@@ -13,7 +13,11 @@
     </genEnums>
     <genClasses ecoreClass="SmallJavaDsl.ecore#//Namespace">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmallJavaDsl.ecore#//Namespace/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmallJavaDsl.ecore#//Namespace/imports"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmallJavaDsl.ecore#//Namespace/smallJava"/>
+    </genClasses>
+    <genClasses ecoreClass="SmallJavaDsl.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmallJavaDsl.ecore#//Import/importedNamespace"/>
     </genClasses>
     <genClasses ecoreClass="SmallJavaDsl.ecore#//SmallJava">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmallJavaDsl.ecore#//SmallJava/visibility"/>

@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.shashwat.xtext.smallJava.smallJavaDsl.Attribute;
 import org.shashwat.xtext.smallJava.smallJavaDsl.Datatype;
+import org.shashwat.xtext.smallJava.smallJavaDsl.Import;
 import org.shashwat.xtext.smallJava.smallJavaDsl.Namespace;
 import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava;
 import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaDslFactory;
@@ -33,6 +34,13 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
    * @generated
    */
   private EClass namespaceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass importEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -157,9 +165,39 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNamespace_SmallJava()
+  public EReference getNamespace_Imports()
   {
     return (EReference)namespaceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNamespace_SmallJava()
+  {
+    return (EReference)namespaceEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getImport()
+  {
+    return importEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getImport_ImportedNamespace()
+  {
+    return (EAttribute)importEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -334,7 +372,11 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
     // Create classes and their features
     namespaceEClass = createEClass(NAMESPACE);
     createEAttribute(namespaceEClass, NAMESPACE__NAME);
+    createEReference(namespaceEClass, NAMESPACE__IMPORTS);
     createEReference(namespaceEClass, NAMESPACE__SMALL_JAVA);
+
+    importEClass = createEClass(IMPORT);
+    createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
 
     smallJavaEClass = createEClass(SMALL_JAVA);
     createEAttribute(smallJavaEClass, SMALL_JAVA__VISIBILITY);
@@ -391,7 +433,11 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
     // Initialize classes and features; add operations and parameters
     initEClass(namespaceEClass, Namespace.class, "Namespace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNamespace_Name(), ecorePackage.getEString(), "name", null, 0, 1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNamespace_Imports(), this.getImport(), null, "imports", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNamespace_SmallJava(), this.getSmallJava(), null, "smallJava", null, 0, 1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(smallJavaEClass, SmallJava.class, "SmallJava", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSmallJava_Visibility(), this.getVisibilityTypes(), "visibility", null, 0, 1, SmallJava.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

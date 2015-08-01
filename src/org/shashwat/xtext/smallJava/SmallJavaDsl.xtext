@@ -4,13 +4,17 @@ generate smallJavaDsl "http://www.shashwat.org/xtext/smallJava/SmallJavaDsl"
 
 Namespace:
 	'namespace' name=QualifiedName
+	imports+=Import*
 	smallJava=SmallJava;
+	
+Import:
+	'import' importedNamespace=QualifiedNameWithWildCards;
 
 QualifiedName:
 	ID ('.'ID)*;
 	
 QualifiedNameWithWildCards:
-	QualifiedName ("."*)?;
+	QualifiedName ('.*')?;
 
 SmallJava:
 	(visibility=VisibilityTypes)? (final?='final')? 'class' name=ID ('extends' parent=[SmallJava])? '{' 

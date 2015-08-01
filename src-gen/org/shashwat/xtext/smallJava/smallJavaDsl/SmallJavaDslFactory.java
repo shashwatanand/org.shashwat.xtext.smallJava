@@ -32,6 +32,15 @@ public interface SmallJavaDslFactory extends EFactory
   Namespace createNamespace();
 
   /**
+   * Returns a new object of class '<em>Import</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Import</em>'.
+   * @generated
+   */
+  Import createImport();
+
+  /**
    * Returns a new object of class '<em>Small Java</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

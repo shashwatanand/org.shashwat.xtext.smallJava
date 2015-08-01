@@ -77,13 +77,22 @@ public interface SmallJavaDslPackage extends EPackage
   int NAMESPACE__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMESPACE__IMPORTS = 1;
+
+  /**
    * The feature id for the '<em><b>Small Java</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMESPACE__SMALL_JAVA = 1;
+  int NAMESPACE__SMALL_JAVA = 2;
 
   /**
    * The number of structural features of the '<em>Namespace</em>' class.
@@ -92,7 +101,35 @@ public interface SmallJavaDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAMESPACE_FEATURE_COUNT = 2;
+  int NAMESPACE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.ImportImpl <em>Import</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.ImportImpl
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslPackageImpl#getImport()
+   * @generated
+   */
+  int IMPORT = 1;
+
+  /**
+   * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT__IMPORTED_NAMESPACE = 0;
+
+  /**
+   * The number of structural features of the '<em>Import</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaImpl <em>Small Java</em>}' class.
@@ -102,7 +139,7 @@ public interface SmallJavaDslPackage extends EPackage
    * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslPackageImpl#getSmallJava()
    * @generated
    */
-  int SMALL_JAVA = 1;
+  int SMALL_JAVA = 2;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -166,7 +203,7 @@ public interface SmallJavaDslPackage extends EPackage
    * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslPackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 2;
+  int ATTRIBUTE = 3;
 
   /**
    * The feature id for the '<em><b>Datatype</b></em>' containment reference.
@@ -212,7 +249,7 @@ public interface SmallJavaDslPackage extends EPackage
    * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslPackageImpl#getDatatype()
    * @generated
    */
-  int DATATYPE = 3;
+  int DATATYPE = 4;
 
   /**
    * The number of structural features of the '<em>Datatype</em>' class.
@@ -231,7 +268,7 @@ public interface SmallJavaDslPackage extends EPackage
    * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslPackageImpl#getSmallJavaType()
    * @generated
    */
-  int SMALL_JAVA_TYPE = 4;
+  int SMALL_JAVA_TYPE = 5;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -259,7 +296,7 @@ public interface SmallJavaDslPackage extends EPackage
    * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslPackageImpl#getVisibilityTypes()
    * @generated
    */
-  int VISIBILITY_TYPES = 5;
+  int VISIBILITY_TYPES = 6;
 
 
   /**
@@ -284,6 +321,17 @@ public interface SmallJavaDslPackage extends EPackage
   EAttribute getNamespace_Name();
 
   /**
+   * Returns the meta object for the containment reference list '{@link org.shashwat.xtext.smallJava.smallJavaDsl.Namespace#getImports <em>Imports</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Imports</em>'.
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.Namespace#getImports()
+   * @see #getNamespace()
+   * @generated
+   */
+  EReference getNamespace_Imports();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.shashwat.xtext.smallJava.smallJavaDsl.Namespace#getSmallJava <em>Small Java</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -293,6 +341,27 @@ public interface SmallJavaDslPackage extends EPackage
    * @generated
    */
   EReference getNamespace_SmallJava();
+
+  /**
+   * Returns the meta object for class '{@link org.shashwat.xtext.smallJava.smallJavaDsl.Import <em>Import</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Import</em>'.
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.Import
+   * @generated
+   */
+  EClass getImport();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.shashwat.xtext.smallJava.smallJavaDsl.Import#getImportedNamespace <em>Imported Namespace</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Imported Namespace</em>'.
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.Import#getImportedNamespace()
+   * @see #getImport()
+   * @generated
+   */
+  EAttribute getImport_ImportedNamespace();
 
   /**
    * Returns the meta object for class '{@link org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava <em>Small Java</em>}'.
@@ -485,12 +554,38 @@ public interface SmallJavaDslPackage extends EPackage
     EAttribute NAMESPACE__NAME = eINSTANCE.getNamespace_Name();
 
     /**
+     * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NAMESPACE__IMPORTS = eINSTANCE.getNamespace_Imports();
+
+    /**
      * The meta object literal for the '<em><b>Small Java</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference NAMESPACE__SMALL_JAVA = eINSTANCE.getNamespace_SmallJava();
+
+    /**
+     * The meta object literal for the '{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.ImportImpl <em>Import</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.ImportImpl
+     * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslPackageImpl#getImport()
+     * @generated
+     */
+    EClass IMPORT = eINSTANCE.getImport();
+
+    /**
+     * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMPORT__IMPORTED_NAMESPACE = eINSTANCE.getImport_ImportedNamespace();
 
     /**
      * The meta object literal for the '{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaImpl <em>Small Java</em>}' class.
