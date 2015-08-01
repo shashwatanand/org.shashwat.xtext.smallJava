@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.shashwat.xtext.smallJava.smallJavaDsl.Attribute;
 import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava;
 import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaDslPackage;
+import org.shashwat.xtext.smallJava.smallJavaDsl.VisibilityTypes;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +31,8 @@ import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaDslPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaImpl#isFinal <em>Final</em>}</li>
  *   <li>{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaImpl#getParent <em>Parent</em>}</li>
  *   <li>{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaImpl#getAttribute <em>Attribute</em>}</li>
@@ -39,6 +42,46 @@ import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaDslPackage;
  */
 public class SmallJavaImpl extends MinimalEObjectImpl.Container implements SmallJava
 {
+  /**
+   * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected static final VisibilityTypes VISIBILITY_EDEFAULT = VisibilityTypes.PUBLIC;
+
+  /**
+   * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected VisibilityTypes visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isFinal() <em>Final</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isFinal()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean FINAL_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isFinal() <em>Final</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isFinal()
+   * @generated
+   * @ordered
+   */
+  protected boolean final_ = FINAL_EDEFAULT;
+
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -98,6 +141,52 @@ public class SmallJavaImpl extends MinimalEObjectImpl.Container implements Small
   protected EClass eStaticClass()
   {
     return SmallJavaDslPackage.Literals.SMALL_JAVA;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VisibilityTypes getVisibility()
+  {
+    return visibility;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVisibility(VisibilityTypes newVisibility)
+  {
+    VisibilityTypes oldVisibility = visibility;
+    visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SmallJavaDslPackage.SMALL_JAVA__VISIBILITY, oldVisibility, visibility));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isFinal()
+  {
+    return final_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFinal(boolean newFinal)
+  {
+    boolean oldFinal = final_;
+    final_ = newFinal;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SmallJavaDslPackage.SMALL_JAVA__FINAL, oldFinal, final_));
   }
 
   /**
@@ -206,6 +295,10 @@ public class SmallJavaImpl extends MinimalEObjectImpl.Container implements Small
   {
     switch (featureID)
     {
+      case SmallJavaDslPackage.SMALL_JAVA__VISIBILITY:
+        return getVisibility();
+      case SmallJavaDslPackage.SMALL_JAVA__FINAL:
+        return isFinal();
       case SmallJavaDslPackage.SMALL_JAVA__NAME:
         return getName();
       case SmallJavaDslPackage.SMALL_JAVA__PARENT:
@@ -228,6 +321,12 @@ public class SmallJavaImpl extends MinimalEObjectImpl.Container implements Small
   {
     switch (featureID)
     {
+      case SmallJavaDslPackage.SMALL_JAVA__VISIBILITY:
+        setVisibility((VisibilityTypes)newValue);
+        return;
+      case SmallJavaDslPackage.SMALL_JAVA__FINAL:
+        setFinal((Boolean)newValue);
+        return;
       case SmallJavaDslPackage.SMALL_JAVA__NAME:
         setName((String)newValue);
         return;
@@ -252,6 +351,12 @@ public class SmallJavaImpl extends MinimalEObjectImpl.Container implements Small
   {
     switch (featureID)
     {
+      case SmallJavaDslPackage.SMALL_JAVA__VISIBILITY:
+        setVisibility(VISIBILITY_EDEFAULT);
+        return;
+      case SmallJavaDslPackage.SMALL_JAVA__FINAL:
+        setFinal(FINAL_EDEFAULT);
+        return;
       case SmallJavaDslPackage.SMALL_JAVA__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -275,6 +380,10 @@ public class SmallJavaImpl extends MinimalEObjectImpl.Container implements Small
   {
     switch (featureID)
     {
+      case SmallJavaDslPackage.SMALL_JAVA__VISIBILITY:
+        return visibility != VISIBILITY_EDEFAULT;
+      case SmallJavaDslPackage.SMALL_JAVA__FINAL:
+        return final_ != FINAL_EDEFAULT;
       case SmallJavaDslPackage.SMALL_JAVA__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SmallJavaDslPackage.SMALL_JAVA__PARENT:
@@ -296,7 +405,11 @@ public class SmallJavaImpl extends MinimalEObjectImpl.Container implements Small
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
+    result.append(" (visibility: ");
+    result.append(visibility);
+    result.append(", final: ");
+    result.append(final_);
+    result.append(", name: ");
     result.append(name);
     result.append(')');
     return result.toString();

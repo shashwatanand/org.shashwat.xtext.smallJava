@@ -21,61 +21,79 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class SmallJavaElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SmallJava");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cClassKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cExtendsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cParentAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final CrossReference cParentSmallJavaCrossReference_2_1_0 = (CrossReference)cParentAssignment_2_1.eContents().get(0);
-		private final RuleCall cParentSmallJavaIDTerminalRuleCall_2_1_0_1 = (RuleCall)cParentSmallJavaCrossReference_2_1_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cAttributeAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cAttributeAttributeParserRuleCall_4_0 = (RuleCall)cAttributeAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cVisibilityAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cVisibilityVisibilityTypesEnumRuleCall_0_0 = (RuleCall)cVisibilityAssignment_0.eContents().get(0);
+		private final Assignment cFinalAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cFinalFinalKeyword_1_0 = (Keyword)cFinalAssignment_1.eContents().get(0);
+		private final Keyword cClassKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cExtendsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cParentAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cParentSmallJavaCrossReference_4_1_0 = (CrossReference)cParentAssignment_4_1.eContents().get(0);
+		private final RuleCall cParentSmallJavaIDTerminalRuleCall_4_1_0_1 = (RuleCall)cParentSmallJavaCrossReference_4_1_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cAttributeAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cAttributeAttributeParserRuleCall_6_0 = (RuleCall)cAttributeAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//SmallJava:
-		//	"class" name=ID ("extends" parent=[SmallJava])? "{" attribute+=Attribute* "}";
+		//	visibility=VisibilityTypes? final?="final"? "class" name=ID ("extends" parent=[SmallJava])? "{" attribute+=Attribute*
+		//	"}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"class" name=ID ("extends" parent=[SmallJava])? "{" attribute+=Attribute* "}"
+		//visibility=VisibilityTypes? final?="final"? "class" name=ID ("extends" parent=[SmallJava])? "{" attribute+=Attribute*
+		//"}"
 		public Group getGroup() { return cGroup; }
 
+		//visibility=VisibilityTypes?
+		public Assignment getVisibilityAssignment_0() { return cVisibilityAssignment_0; }
+
+		//VisibilityTypes
+		public RuleCall getVisibilityVisibilityTypesEnumRuleCall_0_0() { return cVisibilityVisibilityTypesEnumRuleCall_0_0; }
+
+		//final?="final"?
+		public Assignment getFinalAssignment_1() { return cFinalAssignment_1; }
+
+		//"final"
+		public Keyword getFinalFinalKeyword_1_0() { return cFinalFinalKeyword_1_0; }
+
 		//"class"
-		public Keyword getClassKeyword_0() { return cClassKeyword_0; }
+		public Keyword getClassKeyword_2() { return cClassKeyword_2; }
 
 		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
 
 		//("extends" parent=[SmallJava])?
-		public Group getGroup_2() { return cGroup_2; }
+		public Group getGroup_4() { return cGroup_4; }
 
 		//"extends"
-		public Keyword getExtendsKeyword_2_0() { return cExtendsKeyword_2_0; }
+		public Keyword getExtendsKeyword_4_0() { return cExtendsKeyword_4_0; }
 
 		//parent=[SmallJava]
-		public Assignment getParentAssignment_2_1() { return cParentAssignment_2_1; }
+		public Assignment getParentAssignment_4_1() { return cParentAssignment_4_1; }
 
 		//[SmallJava]
-		public CrossReference getParentSmallJavaCrossReference_2_1_0() { return cParentSmallJavaCrossReference_2_1_0; }
+		public CrossReference getParentSmallJavaCrossReference_4_1_0() { return cParentSmallJavaCrossReference_4_1_0; }
 
 		//ID
-		public RuleCall getParentSmallJavaIDTerminalRuleCall_2_1_0_1() { return cParentSmallJavaIDTerminalRuleCall_2_1_0_1; }
+		public RuleCall getParentSmallJavaIDTerminalRuleCall_4_1_0_1() { return cParentSmallJavaIDTerminalRuleCall_4_1_0_1; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 
 		//attribute+=Attribute*
-		public Assignment getAttributeAssignment_4() { return cAttributeAssignment_4; }
+		public Assignment getAttributeAssignment_6() { return cAttributeAssignment_6; }
 
 		//Attribute
-		public RuleCall getAttributeAttributeParserRuleCall_4_0() { return cAttributeAttributeParserRuleCall_4_0; }
+		public RuleCall getAttributeAttributeParserRuleCall_6_0() { return cAttributeAttributeParserRuleCall_6_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class AttributeElements extends AbstractParserRuleElementFinder {
@@ -195,7 +213,36 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
+	public class VisibilityTypesElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "VisibilityTypes");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cPUBLICEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cPUBLICPublicKeyword_0_0 = (Keyword)cPUBLICEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cPRIVATEEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cPRIVATEPrivateKeyword_1_0 = (Keyword)cPRIVATEEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum VisibilityTypes:
+		//	PUBLIC="public" | PRIVATE="private";
+		public EnumRule getRule() { return rule; }
+
+		//PUBLIC="public" | PRIVATE="private"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//PUBLIC="public"
+		public EnumLiteralDeclaration getPUBLICEnumLiteralDeclaration_0() { return cPUBLICEnumLiteralDeclaration_0; }
+
+		//"public"
+		public Keyword getPUBLICPublicKeyword_0_0() { return cPUBLICPublicKeyword_0_0; }
+
+		//PRIVATE="private"
+		public EnumLiteralDeclaration getPRIVATEEnumLiteralDeclaration_1() { return cPRIVATEEnumLiteralDeclaration_1; }
+
+		//"private"
+		public Keyword getPRIVATEPrivateKeyword_1_0() { return cPRIVATEPrivateKeyword_1_0; }
+	}
+	
 	private final SmallJavaElements pSmallJava;
+	private final VisibilityTypesElements unknownRuleVisibilityTypes;
 	private final AttributeElements pAttribute;
 	private final DatatypeElements pDatatype;
 	private final SimpleTypeElements pSimpleType;
@@ -211,6 +258,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pSmallJava = new SmallJavaElements();
+		this.unknownRuleVisibilityTypes = new VisibilityTypesElements();
 		this.pAttribute = new AttributeElements();
 		this.pDatatype = new DatatypeElements();
 		this.pSimpleType = new SimpleTypeElements();
@@ -245,13 +293,24 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//SmallJava:
-	//	"class" name=ID ("extends" parent=[SmallJava])? "{" attribute+=Attribute* "}";
+	//	visibility=VisibilityTypes? final?="final"? "class" name=ID ("extends" parent=[SmallJava])? "{" attribute+=Attribute*
+	//	"}";
 	public SmallJavaElements getSmallJavaAccess() {
 		return pSmallJava;
 	}
 	
 	public ParserRule getSmallJavaRule() {
 		return getSmallJavaAccess().getRule();
+	}
+
+	//enum VisibilityTypes:
+	//	PUBLIC="public" | PRIVATE="private";
+	public VisibilityTypesElements getVisibilityTypesAccess() {
+		return unknownRuleVisibilityTypes;
+	}
+	
+	public EnumRule getVisibilityTypesRule() {
+		return getVisibilityTypesAccess().getRule();
 	}
 
 	//Attribute:

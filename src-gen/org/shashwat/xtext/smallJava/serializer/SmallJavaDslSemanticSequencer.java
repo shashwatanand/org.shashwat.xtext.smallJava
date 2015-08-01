@@ -84,7 +84,7 @@ public class SmallJavaDslSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (name=ID parent=[SmallJava|ID]? attribute+=Attribute*)
+	 *     (visibility=VisibilityTypes? final?='final'? name=ID parent=[SmallJava|ID]? attribute+=Attribute*)
 	 */
 	protected void sequence_SmallJava(EObject context, SmallJava semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -4,6 +4,7 @@ package org.shashwat.xtext.smallJava.smallJavaDsl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -67,13 +68,31 @@ public interface SmallJavaDslPackage extends EPackage
   int SMALL_JAVA = 0;
 
   /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SMALL_JAVA__VISIBILITY = 0;
+
+  /**
+   * The feature id for the '<em><b>Final</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SMALL_JAVA__FINAL = 1;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SMALL_JAVA__NAME = 0;
+  int SMALL_JAVA__NAME = 2;
 
   /**
    * The feature id for the '<em><b>Parent</b></em>' reference.
@@ -82,7 +101,7 @@ public interface SmallJavaDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SMALL_JAVA__PARENT = 1;
+  int SMALL_JAVA__PARENT = 3;
 
   /**
    * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
@@ -91,7 +110,7 @@ public interface SmallJavaDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SMALL_JAVA__ATTRIBUTE = 2;
+  int SMALL_JAVA__ATTRIBUTE = 4;
 
   /**
    * The number of structural features of the '<em>Small Java</em>' class.
@@ -100,7 +119,7 @@ public interface SmallJavaDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SMALL_JAVA_FEATURE_COUNT = 3;
+  int SMALL_JAVA_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link org.shashwat.xtext.smallJava.smallJavaDsl.impl.AttributeImpl <em>Attribute</em>}' class.
@@ -195,6 +214,16 @@ public interface SmallJavaDslPackage extends EPackage
    */
   int SMALL_JAVA_TYPE_FEATURE_COUNT = DATATYPE_FEATURE_COUNT + 1;
 
+  /**
+   * The meta object id for the '{@link org.shashwat.xtext.smallJava.smallJavaDsl.VisibilityTypes <em>Visibility Types</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.VisibilityTypes
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslPackageImpl#getVisibilityTypes()
+   * @generated
+   */
+  int VISIBILITY_TYPES = 4;
+
 
   /**
    * Returns the meta object for class '{@link org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava <em>Small Java</em>}'.
@@ -205,6 +234,28 @@ public interface SmallJavaDslPackage extends EPackage
    * @generated
    */
   EClass getSmallJava();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava#getVisibility <em>Visibility</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Visibility</em>'.
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava#getVisibility()
+   * @see #getSmallJava()
+   * @generated
+   */
+  EAttribute getSmallJava_Visibility();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava#isFinal <em>Final</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Final</em>'.
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava#isFinal()
+   * @see #getSmallJava()
+   * @generated
+   */
+  EAttribute getSmallJava_Final();
 
   /**
    * Returns the meta object for the attribute '{@link org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava#getName <em>Name</em>}'.
@@ -314,6 +365,16 @@ public interface SmallJavaDslPackage extends EPackage
   EReference getSmallJavaType_Type();
 
   /**
+   * Returns the meta object for enum '{@link org.shashwat.xtext.smallJava.smallJavaDsl.VisibilityTypes <em>Visibility Types</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Visibility Types</em>'.
+   * @see org.shashwat.xtext.smallJava.smallJavaDsl.VisibilityTypes
+   * @generated
+   */
+  EEnum getVisibilityTypes();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -345,6 +406,22 @@ public interface SmallJavaDslPackage extends EPackage
      * @generated
      */
     EClass SMALL_JAVA = eINSTANCE.getSmallJava();
+
+    /**
+     * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SMALL_JAVA__VISIBILITY = eINSTANCE.getSmallJava_Visibility();
+
+    /**
+     * The meta object literal for the '<em><b>Final</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SMALL_JAVA__FINAL = eINSTANCE.getSmallJava_Final();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -431,6 +508,16 @@ public interface SmallJavaDslPackage extends EPackage
      * @generated
      */
     EReference SMALL_JAVA_TYPE__TYPE = eINSTANCE.getSmallJavaType_Type();
+
+    /**
+     * The meta object literal for the '{@link org.shashwat.xtext.smallJava.smallJavaDsl.VisibilityTypes <em>Visibility Types</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.shashwat.xtext.smallJava.smallJavaDsl.VisibilityTypes
+     * @see org.shashwat.xtext.smallJava.smallJavaDsl.impl.SmallJavaDslPackageImpl#getVisibilityTypes()
+     * @generated
+     */
+    EEnum VISIBILITY_TYPES = eINSTANCE.getVisibilityTypes();
 
   }
 

@@ -7,7 +7,13 @@
     editorPluginID="org.shashwat.xtext.smallJava.editor" runtimeVersion="2.11">
   <genPackages prefix="SmallJavaDsl" basePackage="org.shashwat.xtext.smallJava" disposableProviderFactory="true"
       fileExtensions="smalljava,sj" ecorePackage="SmallJavaDsl.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SmallJavaDsl.ecore#//VisibilityTypes">
+      <genEnumLiterals ecoreEnumLiteral="SmallJavaDsl.ecore#//VisibilityTypes/PUBLIC"/>
+      <genEnumLiterals ecoreEnumLiteral="SmallJavaDsl.ecore#//VisibilityTypes/PRIVATE"/>
+    </genEnums>
     <genClasses ecoreClass="SmallJavaDsl.ecore#//SmallJava">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmallJavaDsl.ecore#//SmallJava/visibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmallJavaDsl.ecore#//SmallJava/final"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmallJavaDsl.ecore#//SmallJava/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SmallJavaDsl.ecore#//SmallJava/parent"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmallJavaDsl.ecore#//SmallJava/attribute"/>

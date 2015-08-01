@@ -24,6 +24,7 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -77,15 +78,48 @@ ruleSmallJava returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='class' 
+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSmallJavaAccess().getVisibilityVisibilityTypesEnumRuleCall_0_0()); 
+	    }
+		lv_visibility_0_0=ruleVisibilityTypes		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSmallJavaRule());
+	        }
+       		set(
+       			$current, 
+       			"visibility",
+        		lv_visibility_0_0, 
+        		"VisibilityTypes");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?(
+(
+		lv_final_1_0=	'final' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getSmallJavaAccess().getClassKeyword_0());
+        newLeafNode(lv_final_1_0, grammarAccess.getSmallJavaAccess().getFinalFinalKeyword_1_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSmallJavaRule());
+	        }
+       		setWithLastConsumed($current, "final", true, "final");
+	    }
+
+)
+)?	otherlv_2='class' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getSmallJavaAccess().getClassKeyword_2());
     }
 (
 (
-		lv_name_1_0=RULE_ID
+		lv_name_3_0=RULE_ID
 		{
-			newLeafNode(lv_name_1_0, grammarAccess.getSmallJavaAccess().getNameIDTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_3_0, grammarAccess.getSmallJavaAccess().getNameIDTerminalRuleCall_3_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -94,14 +128,14 @@ ruleSmallJava returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_1_0, 
+        		lv_name_3_0, 
         		"ID");
 	    }
 
 )
-)(	otherlv_2='extends' 
+)(	otherlv_4='extends' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getSmallJavaAccess().getExtendsKeyword_2_0());
+    	newLeafNode(otherlv_4, grammarAccess.getSmallJavaAccess().getExtendsKeyword_4_0());
     }
 (
 (
@@ -110,37 +144,37 @@ ruleSmallJava returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getSmallJavaRule());
 	        }
         }
-	otherlv_3=RULE_ID
+	otherlv_5=RULE_ID
 	{
-		newLeafNode(otherlv_3, grammarAccess.getSmallJavaAccess().getParentSmallJavaCrossReference_2_1_0()); 
+		newLeafNode(otherlv_5, grammarAccess.getSmallJavaAccess().getParentSmallJavaCrossReference_4_1_0()); 
 	}
 
 )
-))?	otherlv_4='{' 
+))?	otherlv_6='{' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getSmallJavaAccess().getLeftCurlyBracketKeyword_3());
+    	newLeafNode(otherlv_6, grammarAccess.getSmallJavaAccess().getLeftCurlyBracketKeyword_5());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSmallJavaAccess().getAttributeAttributeParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getSmallJavaAccess().getAttributeAttributeParserRuleCall_6_0()); 
 	    }
-		lv_attribute_5_0=ruleAttribute		{
+		lv_attribute_7_0=ruleAttribute		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSmallJavaRule());
 	        }
        		add(
        			$current, 
        			"attribute",
-        		lv_attribute_5_0, 
+        		lv_attribute_7_0, 
         		"Attribute");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*	otherlv_6='}' 
+)*	otherlv_8='}' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getSmallJavaAccess().getRightCurlyBracketKeyword_5());
+    	newLeafNode(otherlv_8, grammarAccess.getSmallJavaAccess().getRightCurlyBracketKeyword_7());
     }
 )
 ;
@@ -352,6 +386,25 @@ ruleSmallJavaType returns [EObject current=null]
 ;
 
 
+
+
+
+// Rule VisibilityTypes
+ruleVisibilityTypes returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='public' 
+	{
+        $current = grammarAccess.getVisibilityTypesAccess().getPUBLICEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getVisibilityTypesAccess().getPUBLICEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='private' 
+	{
+        $current = grammarAccess.getVisibilityTypesAccess().getPRIVATEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getVisibilityTypesAccess().getPRIVATEEnumLiteralDeclaration_1()); 
+    }
+));
 
 
 

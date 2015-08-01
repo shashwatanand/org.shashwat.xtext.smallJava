@@ -4,6 +4,7 @@ package org.shashwat.xtext.smallJava.smallJavaDsl.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -15,6 +16,7 @@ import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJava;
 import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaDslFactory;
 import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaDslPackage;
 import org.shashwat.xtext.smallJava.smallJavaDsl.SmallJavaType;
+import org.shashwat.xtext.smallJava.smallJavaDsl.VisibilityTypes;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,6 +53,13 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
    * @generated
    */
   private EClass smallJavaTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum visibilityTypesEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -130,7 +139,7 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSmallJava_Name()
+  public EAttribute getSmallJava_Visibility()
   {
     return (EAttribute)smallJavaEClass.getEStructuralFeatures().get(0);
   }
@@ -140,9 +149,29 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getSmallJava_Final()
+  {
+    return (EAttribute)smallJavaEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSmallJava_Name()
+  {
+    return (EAttribute)smallJavaEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getSmallJava_Parent()
   {
-    return (EReference)smallJavaEClass.getEStructuralFeatures().get(1);
+    return (EReference)smallJavaEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -152,7 +181,7 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
    */
   public EReference getSmallJava_Attribute()
   {
-    return (EReference)smallJavaEClass.getEStructuralFeatures().get(2);
+    return (EReference)smallJavaEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -230,6 +259,16 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EEnum getVisibilityTypes()
+  {
+    return visibilityTypesEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public SmallJavaDslFactory getSmallJavaDslFactory()
   {
     return (SmallJavaDslFactory)getEFactoryInstance();
@@ -256,6 +295,8 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
 
     // Create classes and their features
     smallJavaEClass = createEClass(SMALL_JAVA);
+    createEAttribute(smallJavaEClass, SMALL_JAVA__VISIBILITY);
+    createEAttribute(smallJavaEClass, SMALL_JAVA__FINAL);
     createEAttribute(smallJavaEClass, SMALL_JAVA__NAME);
     createEReference(smallJavaEClass, SMALL_JAVA__PARENT);
     createEReference(smallJavaEClass, SMALL_JAVA__ATTRIBUTE);
@@ -269,6 +310,9 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
 
     smallJavaTypeEClass = createEClass(SMALL_JAVA_TYPE);
     createEReference(smallJavaTypeEClass, SMALL_JAVA_TYPE__TYPE);
+
+    // Create enums
+    visibilityTypesEEnum = createEEnum(VISIBILITY_TYPES);
   }
 
   /**
@@ -304,6 +348,8 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
 
     // Initialize classes and features; add operations and parameters
     initEClass(smallJavaEClass, SmallJava.class, "SmallJava", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSmallJava_Visibility(), this.getVisibilityTypes(), "visibility", null, 0, 1, SmallJava.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSmallJava_Final(), ecorePackage.getEBoolean(), "final", null, 0, 1, SmallJava.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSmallJava_Name(), ecorePackage.getEString(), "name", null, 0, 1, SmallJava.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSmallJava_Parent(), this.getSmallJava(), null, "parent", null, 0, 1, SmallJava.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSmallJava_Attribute(), this.getAttribute(), null, "attribute", null, 0, -1, SmallJava.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -317,6 +363,11 @@ public class SmallJavaDslPackageImpl extends EPackageImpl implements SmallJavaDs
 
     initEClass(smallJavaTypeEClass, SmallJavaType.class, "SmallJavaType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSmallJavaType_Type(), this.getSmallJava(), null, "type", null, 0, 1, SmallJavaType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    // Initialize enums and add enum literals
+    initEEnum(visibilityTypesEEnum, VisibilityTypes.class, "VisibilityTypes");
+    addEEnumLiteral(visibilityTypesEEnum, VisibilityTypes.PUBLIC);
+    addEEnumLiteral(visibilityTypesEEnum, VisibilityTypes.PRIVATE);
 
     // Create resource
     createResource(eNS_URI);

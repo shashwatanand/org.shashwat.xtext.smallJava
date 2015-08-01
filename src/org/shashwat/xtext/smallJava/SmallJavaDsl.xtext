@@ -3,15 +3,19 @@ grammar org.shashwat.xtext.smallJava.SmallJavaDsl with org.eclipse.xtext.common.
 generate smallJavaDsl "http://www.shashwat.org/xtext/smallJava/SmallJavaDsl"
 
 SmallJava:
-	'class' name=ID ('extends' parent=[SmallJava])? '{' 
+	(visibility=VisibilityTypes)? (final?='final')? 'class' name=ID ('extends' parent=[SmallJava])? '{' 
 		attribute+=Attribute*
 	'}';
+	
+enum VisibilityTypes:
+	PUBLIC="public" | PRIVATE="private";
+
 
 Attribute:
 	(datatype=Datatype) (array?='[]')? (name=ID);
 	
 Datatype:
-	{Datatype} SimpleType | SmallJavaType;
+	{Datatype}SimpleType | SmallJavaType;
 	
 SimpleType:
 	'String' | 'Integer' | 'Boolean' | 'Decimal' | 'BigDecimal';
