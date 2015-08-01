@@ -22,11 +22,13 @@ public class SmallJavaDslFormatter extends AbstractDeclarativeFormatter {
 	private SmallJavaDslGrammarAccess grammarAccess; 
 	
 	@Override
-	protected void configureFormatting(FormattingConfig c) {
-// It's usually a good idea to activate the following three statements.
-// They will add and preserve newlines around comments
-//		c.setLinewrap(0, 1, 2).before(grammarAccess.getSL_COMMENTRule());
-//		c.setLinewrap(0, 1, 2).before(grammarAccess.getML_COMMENTRule());
-//		c.setLinewrap(0, 1, 1).after(grammarAccess.getML_COMMENTRule());
+	protected void configureFormatting(FormattingConfig formattingConfig) {
+		formattingConfig.setLinewrap(2).after(grammarAccess.getNamespaceAccess().getNameQualifiedNameParserRuleCall_1_0());
+		formattingConfig.setLinewrap(2).before(grammarAccess.getSmallJavaRule());
+		
+		formattingConfig.setLinewrap(1).after(grammarAccess.getSmallJavaAccess().getLeftCurlyBracketKeyword_5());
+		formattingConfig.setLinewrap(1).before(grammarAccess.getSmallJavaAccess().getRightCurlyBracketKeyword_7());
+		
+		formattingConfig.setLinewrap(1).after(grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_2_0());
 	}
 }
