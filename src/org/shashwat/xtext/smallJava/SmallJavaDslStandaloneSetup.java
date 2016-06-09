@@ -13,4 +13,3 @@ public class SmallJavaDslStandaloneSetup extends SmallJavaDslStandaloneSetupGene
 		new SmallJavaDslStandaloneSetup().createInjectorAndDoEMFRegistration();
 	}
 }
-
