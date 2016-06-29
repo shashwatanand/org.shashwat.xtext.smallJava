@@ -49,15 +49,15 @@ public class InternalSmallJavaDslLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g"; }
+    public String getGrammarFileName() { return "InternalSmallJavaDsl.g"; }
 
     // $ANTLR start "T__11"
     public final void mT__11() throws RecognitionException {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:11:7: ( 'namespace' )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:11:9: 'namespace'
+            // InternalSmallJavaDsl.g:11:7: ( 'namespace' )
+            // InternalSmallJavaDsl.g:11:9: 'namespace'
             {
             match("namespace"); 
 
@@ -77,8 +77,8 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:12:7: ( 'import' )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:12:9: 'import'
+            // InternalSmallJavaDsl.g:12:7: ( 'import' )
+            // InternalSmallJavaDsl.g:12:9: 'import'
             {
             match("import"); 
 
@@ -98,8 +98,8 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:13:7: ( '.' )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:13:9: '.'
+            // InternalSmallJavaDsl.g:13:7: ( '.' )
+            // InternalSmallJavaDsl.g:13:9: '.'
             {
             match('.'); 
 
@@ -118,8 +118,8 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:14:7: ( '.*' )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:14:9: '.*'
+            // InternalSmallJavaDsl.g:14:7: ( '.*' )
+            // InternalSmallJavaDsl.g:14:9: '.*'
             {
             match(".*"); 
 
@@ -139,8 +139,8 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:15:7: ( 'final' )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:15:9: 'final'
+            // InternalSmallJavaDsl.g:15:7: ( 'final' )
+            // InternalSmallJavaDsl.g:15:9: 'final'
             {
             match("final"); 
 
@@ -160,8 +160,8 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:16:7: ( 'class' )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:16:9: 'class'
+            // InternalSmallJavaDsl.g:16:7: ( 'class' )
+            // InternalSmallJavaDsl.g:16:9: 'class'
             {
             match("class"); 
 
@@ -181,8 +181,8 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:17:7: ( 'extends' )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:17:9: 'extends'
+            // InternalSmallJavaDsl.g:17:7: ( 'extends' )
+            // InternalSmallJavaDsl.g:17:9: 'extends'
             {
             match("extends"); 
 
@@ -202,8 +202,8 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:18:7: ( '{' )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:18:9: '{'
+            // InternalSmallJavaDsl.g:18:7: ( '{' )
+            // InternalSmallJavaDsl.g:18:9: '{'
             {
             match('{'); 
 
@@ -222,8 +222,8 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:19:7: ( '}' )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:19:9: '}'
+            // InternalSmallJavaDsl.g:19:7: ( '}' )
+            // InternalSmallJavaDsl.g:19:9: '}'
             {
             match('}'); 
 
@@ -242,8 +242,8 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:20:7: ( '[]' )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:20:9: '[]'
+            // InternalSmallJavaDsl.g:20:7: ( '[]' )
+            // InternalSmallJavaDsl.g:20:9: '[]'
             {
             match("[]"); 
 
@@ -263,8 +263,8 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:21:7: ( 'String' )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:21:9: 'String'
+            // InternalSmallJavaDsl.g:21:7: ( 'String' )
+            // InternalSmallJavaDsl.g:21:9: 'String'
             {
             match("String"); 
 
@@ -284,8 +284,8 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:22:7: ( 'Integer' )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:22:9: 'Integer'
+            // InternalSmallJavaDsl.g:22:7: ( 'Integer' )
+            // InternalSmallJavaDsl.g:22:9: 'Integer'
             {
             match("Integer"); 
 
@@ -305,8 +305,8 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:23:7: ( 'Boolean' )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:23:9: 'Boolean'
+            // InternalSmallJavaDsl.g:23:7: ( 'Boolean' )
+            // InternalSmallJavaDsl.g:23:9: 'Boolean'
             {
             match("Boolean"); 
 
@@ -326,8 +326,8 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:24:7: ( 'Decimal' )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:24:9: 'Decimal'
+            // InternalSmallJavaDsl.g:24:7: ( 'Decimal' )
+            // InternalSmallJavaDsl.g:24:9: 'Decimal'
             {
             match("Decimal"); 
 
@@ -347,8 +347,8 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:25:7: ( 'BigDecimal' )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:25:9: 'BigDecimal'
+            // InternalSmallJavaDsl.g:25:7: ( 'BigDecimal' )
+            // InternalSmallJavaDsl.g:25:9: 'BigDecimal'
             {
             match("BigDecimal"); 
 
@@ -368,8 +368,8 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:26:7: ( 'public' )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:26:9: 'public'
+            // InternalSmallJavaDsl.g:26:7: ( 'public' )
+            // InternalSmallJavaDsl.g:26:9: 'public'
             {
             match("public"); 
 
@@ -389,8 +389,8 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:27:7: ( 'private' )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:27:9: 'private'
+            // InternalSmallJavaDsl.g:27:7: ( 'private' )
+            // InternalSmallJavaDsl.g:27:9: 'private'
             {
             match("private"); 
 
@@ -410,10 +410,10 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:612:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:612:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalSmallJavaDsl.g:612:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalSmallJavaDsl.g:612:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:612:11: ( '^' )?
+            // InternalSmallJavaDsl.g:612:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -422,7 +422,7 @@ public class InternalSmallJavaDslLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:612:11: '^'
+                    // InternalSmallJavaDsl.g:612:11: '^'
                     {
                     match('^'); 
 
@@ -440,7 +440,7 @@ public class InternalSmallJavaDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:612:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalSmallJavaDsl.g:612:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -453,7 +453,7 @@ public class InternalSmallJavaDslLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:
+            	    // InternalSmallJavaDsl.g:
             	    {
             	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -489,10 +489,10 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:614:10: ( ( '0' .. '9' )+ )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:614:12: ( '0' .. '9' )+
+            // InternalSmallJavaDsl.g:614:10: ( ( '0' .. '9' )+ )
+            // InternalSmallJavaDsl.g:614:12: ( '0' .. '9' )+
             {
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:614:12: ( '0' .. '9' )+
+            // InternalSmallJavaDsl.g:614:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -506,7 +506,7 @@ public class InternalSmallJavaDslLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:614:13: '0' .. '9'
+            	    // InternalSmallJavaDsl.g:614:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -538,10 +538,10 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:616:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:616:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalSmallJavaDsl.g:616:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalSmallJavaDsl.g:616:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:616:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalSmallJavaDsl.g:616:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -559,10 +559,10 @@ public class InternalSmallJavaDslLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:616:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalSmallJavaDsl.g:616:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:616:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalSmallJavaDsl.g:616:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -578,7 +578,7 @@ public class InternalSmallJavaDslLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:616:21: '\\\\' .
+                    	    // InternalSmallJavaDsl.g:616:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -586,7 +586,7 @@ public class InternalSmallJavaDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:616:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalSmallJavaDsl.g:616:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -611,10 +611,10 @@ public class InternalSmallJavaDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:616:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalSmallJavaDsl.g:616:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:616:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalSmallJavaDsl.g:616:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -630,7 +630,7 @@ public class InternalSmallJavaDslLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:616:54: '\\\\' .
+                    	    // InternalSmallJavaDsl.g:616:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -638,7 +638,7 @@ public class InternalSmallJavaDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:616:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalSmallJavaDsl.g:616:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -681,12 +681,12 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:618:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:618:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalSmallJavaDsl.g:618:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalSmallJavaDsl.g:618:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:618:24: ( options {greedy=false; } : . )*
+            // InternalSmallJavaDsl.g:618:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -711,7 +711,7 @@ public class InternalSmallJavaDslLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:618:52: .
+            	    // InternalSmallJavaDsl.g:618:52: .
             	    {
             	    matchAny(); 
 
@@ -741,12 +741,12 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:620:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:620:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalSmallJavaDsl.g:620:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalSmallJavaDsl.g:620:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:620:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalSmallJavaDsl.g:620:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -759,7 +759,7 @@ public class InternalSmallJavaDslLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:620:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalSmallJavaDsl.g:620:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -779,7 +779,7 @@ public class InternalSmallJavaDslLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:620:40: ( ( '\\r' )? '\\n' )?
+            // InternalSmallJavaDsl.g:620:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -788,9 +788,9 @@ public class InternalSmallJavaDslLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:620:41: ( '\\r' )? '\\n'
+                    // InternalSmallJavaDsl.g:620:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:620:41: ( '\\r' )?
+                    // InternalSmallJavaDsl.g:620:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -799,7 +799,7 @@ public class InternalSmallJavaDslLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:620:41: '\\r'
+                            // InternalSmallJavaDsl.g:620:41: '\\r'
                             {
                             match('\r'); 
 
@@ -831,10 +831,10 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:622:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:622:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalSmallJavaDsl.g:622:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalSmallJavaDsl.g:622:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:622:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalSmallJavaDsl.g:622:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -848,7 +848,7 @@ public class InternalSmallJavaDslLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:
+            	    // InternalSmallJavaDsl.g:
             	    {
             	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -888,8 +888,8 @@ public class InternalSmallJavaDslLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:624:16: ( . )
-            // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:624:18: .
+            // InternalSmallJavaDsl.g:624:16: ( . )
+            // InternalSmallJavaDsl.g:624:18: .
             {
             matchAny(); 
 
@@ -904,173 +904,173 @@ public class InternalSmallJavaDslLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        // InternalSmallJavaDsl.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt12=24;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:10: T__11
+                // InternalSmallJavaDsl.g:1:10: T__11
                 {
                 mT__11(); 
 
                 }
                 break;
             case 2 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:16: T__12
+                // InternalSmallJavaDsl.g:1:16: T__12
                 {
                 mT__12(); 
 
                 }
                 break;
             case 3 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:22: T__13
+                // InternalSmallJavaDsl.g:1:22: T__13
                 {
                 mT__13(); 
 
                 }
                 break;
             case 4 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:28: T__14
+                // InternalSmallJavaDsl.g:1:28: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
             case 5 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:34: T__15
+                // InternalSmallJavaDsl.g:1:34: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
             case 6 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:40: T__16
+                // InternalSmallJavaDsl.g:1:40: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
             case 7 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:46: T__17
+                // InternalSmallJavaDsl.g:1:46: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
             case 8 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:52: T__18
+                // InternalSmallJavaDsl.g:1:52: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
             case 9 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:58: T__19
+                // InternalSmallJavaDsl.g:1:58: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
             case 10 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:64: T__20
+                // InternalSmallJavaDsl.g:1:64: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
             case 11 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:70: T__21
+                // InternalSmallJavaDsl.g:1:70: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
             case 12 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:76: T__22
+                // InternalSmallJavaDsl.g:1:76: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
             case 13 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:82: T__23
+                // InternalSmallJavaDsl.g:1:82: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
             case 14 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:88: T__24
+                // InternalSmallJavaDsl.g:1:88: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
             case 15 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:94: T__25
+                // InternalSmallJavaDsl.g:1:94: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
             case 16 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:100: T__26
+                // InternalSmallJavaDsl.g:1:100: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
             case 17 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:106: T__27
+                // InternalSmallJavaDsl.g:1:106: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
             case 18 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:112: RULE_ID
+                // InternalSmallJavaDsl.g:1:112: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 19 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:120: RULE_INT
+                // InternalSmallJavaDsl.g:1:120: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 20 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:129: RULE_STRING
+                // InternalSmallJavaDsl.g:1:129: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 21 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:141: RULE_ML_COMMENT
+                // InternalSmallJavaDsl.g:1:141: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 22 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:157: RULE_SL_COMMENT
+                // InternalSmallJavaDsl.g:1:157: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 23 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:173: RULE_WS
+                // InternalSmallJavaDsl.g:1:173: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 24 :
-                // ../org.shashwat.xtext.smallJava/src-gen/org/shashwat/xtext/smallJava/parser/antlr/internal/InternalSmallJavaDsl.g:1:181: RULE_ANY_OTHER
+                // InternalSmallJavaDsl.g:1:181: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1084,48 +1084,19 @@ public class InternalSmallJavaDslLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\2\30\1\33\3\30\2\uffff\1\26\5\30\1\26\2\uffff\3\26\2\uffff"+
-        "\1\30\1\uffff\1\30\2\uffff\3\30\3\uffff\7\30\5\uffff\32\30\1\124"+
-        "\1\125\11\30\1\137\2\uffff\1\30\1\141\4\30\1\146\2\30\1\uffff\1"+
-        "\151\1\uffff\1\152\1\153\1\30\1\155\1\uffff\1\156\1\30\3\uffff\1"+
-        "\30\2\uffff\1\161\1\30\1\uffff\1\163\1\uffff";
+        "\1\uffff\2\30\1\33\3\30\2\uffff\1\26\5\30\1\26\2\uffff\3\26\2\uffff\1\30\1\uffff\1\30\2\uffff\3\30\3\uffff\7\30\5\uffff\32\30\1\124\1\125\11\30\1\137\2\uffff\1\30\1\141\4\30\1\146\2\30\1\uffff\1\151\1\uffff\1\152\1\153\1\30\1\155\1\uffff\1\156\1\30\3\uffff\1\30\2\uffff\1\161\1\30\1\uffff\1\163\1\uffff";
     static final String DFA12_eofS =
         "\164\uffff";
     static final String DFA12_minS =
-        "\1\0\1\141\1\155\1\52\1\151\1\154\1\170\2\uffff\1\135\1\164\1\156"+
-        "\1\151\1\145\1\162\1\101\2\uffff\2\0\1\52\2\uffff\1\155\1\uffff"+
-        "\1\160\2\uffff\1\156\1\141\1\164\3\uffff\1\162\1\164\1\157\1\147"+
-        "\1\143\1\142\1\151\5\uffff\1\145\1\157\1\141\1\163\1\145\1\151\1"+
-        "\145\1\154\1\104\1\151\1\154\1\166\1\163\1\162\1\154\1\163\2\156"+
-        "\1\147\2\145\1\155\1\151\1\141\1\160\1\164\2\60\1\144\1\147\1\145"+
-        "\1\141\1\143\1\141\1\143\1\164\1\141\1\60\2\uffff\1\163\1\60\1\162"+
-        "\1\156\1\151\1\154\1\60\1\145\1\143\1\uffff\1\60\1\uffff\2\60\1"+
-        "\155\1\60\1\uffff\1\60\1\145\3\uffff\1\141\2\uffff\1\60\1\154\1"+
-        "\uffff\1\60\1\uffff";
+        "\1\0\1\141\1\155\1\52\1\151\1\154\1\170\2\uffff\1\135\1\164\1\156\1\151\1\145\1\162\1\101\2\uffff\2\0\1\52\2\uffff\1\155\1\uffff\1\160\2\uffff\1\156\1\141\1\164\3\uffff\1\162\1\164\1\157\1\147\1\143\1\142\1\151\5\uffff\1\145\1\157\1\141\1\163\1\145\1\151\1\145\1\154\1\104\1\151\1\154\1\166\1\163\1\162\1\154\1\163\2\156\1\147\2\145\1\155\1\151\1\141\1\160\1\164\2\60\1\144\1\147\1\145\1\141\1\143\1\141\1\143\1\164\1\141\1\60\2\uffff\1\163\1\60\1\162\1\156\1\151\1\154\1\60\1\145\1\143\1\uffff\1\60\1\uffff\2\60\1\155\1\60\1\uffff\1\60\1\145\3\uffff\1\141\2\uffff\1\60\1\154\1\uffff\1\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\141\1\155\1\52\1\151\1\154\1\170\2\uffff\1\135\1\164"+
-        "\1\156\1\157\1\145\1\165\1\172\2\uffff\2\uffff\1\57\2\uffff\1\155"+
-        "\1\uffff\1\160\2\uffff\1\156\1\141\1\164\3\uffff\1\162\1\164\1\157"+
-        "\1\147\1\143\1\142\1\151\5\uffff\1\145\1\157\1\141\1\163\1\145\1"+
-        "\151\1\145\1\154\1\104\1\151\1\154\1\166\1\163\1\162\1\154\1\163"+
-        "\2\156\1\147\2\145\1\155\1\151\1\141\1\160\1\164\2\172\1\144\1\147"+
-        "\1\145\1\141\1\143\1\141\1\143\1\164\1\141\1\172\2\uffff\1\163\1"+
-        "\172\1\162\1\156\1\151\1\154\1\172\1\145\1\143\1\uffff\1\172\1\uffff"+
-        "\2\172\1\155\1\172\1\uffff\1\172\1\145\3\uffff\1\141\2\uffff\1\172"+
-        "\1\154\1\uffff\1\172\1\uffff";
+        "\1\uffff\1\141\1\155\1\52\1\151\1\154\1\170\2\uffff\1\135\1\164\1\156\1\157\1\145\1\165\1\172\2\uffff\2\uffff\1\57\2\uffff\1\155\1\uffff\1\160\2\uffff\1\156\1\141\1\164\3\uffff\1\162\1\164\1\157\1\147\1\143\1\142\1\151\5\uffff\1\145\1\157\1\141\1\163\1\145\1\151\1\145\1\154\1\104\1\151\1\154\1\166\1\163\1\162\1\154\1\163\2\156\1\147\2\145\1\155\1\151\1\141\1\160\1\164\2\172\1\144\1\147\1\145\1\141\1\143\1\141\1\143\1\164\1\141\1\172\2\uffff\1\163\1\172\1\162\1\156\1\151\1\154\1\172\1\145\1\143\1\uffff\1\172\1\uffff\2\172\1\155\1\172\1\uffff\1\172\1\145\3\uffff\1\141\2\uffff\1\172\1\154\1\uffff\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\7\uffff\1\10\1\11\7\uffff\1\22\1\23\3\uffff\1\27\1\30\1\uffff"+
-        "\1\22\1\uffff\1\4\1\3\3\uffff\1\10\1\11\1\12\7\uffff\1\23\1\24\1"+
-        "\25\1\26\1\27\46\uffff\1\5\1\6\11\uffff\1\2\1\uffff\1\13\4\uffff"+
-        "\1\20\2\uffff\1\7\1\14\1\15\1\uffff\1\16\1\21\2\uffff\1\1\1\uffff"+
-        "\1\17";
+        "\7\uffff\1\10\1\11\7\uffff\1\22\1\23\3\uffff\1\27\1\30\1\uffff\1\22\1\uffff\1\4\1\3\3\uffff\1\10\1\11\1\12\7\uffff\1\23\1\24\1\25\1\26\1\27\46\uffff\1\5\1\6\11\uffff\1\2\1\uffff\1\13\4\uffff\1\20\2\uffff\1\7\1\14\1\15\1\uffff\1\16\1\21\2\uffff\1\1\1\uffff\1\17";
     static final String DFA12_specialS =
         "\1\2\21\uffff\1\1\1\0\140\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\26\2\25\2\26\1\25\22\26\1\25\1\26\1\22\4\26\1\23\6\26\1"+
-            "\3\1\24\12\21\7\26\1\20\1\14\1\20\1\15\4\20\1\13\11\20\1\12"+
-            "\7\20\1\11\2\26\1\17\1\20\1\26\2\20\1\5\1\20\1\6\1\4\2\20\1"+
-            "\2\4\20\1\1\1\20\1\16\12\20\1\7\1\26\1\10\uff82\26",
+            "\11\26\2\25\2\26\1\25\22\26\1\25\1\26\1\22\4\26\1\23\6\26\1\3\1\24\12\21\7\26\1\20\1\14\1\20\1\15\4\20\1\13\11\20\1\12\7\20\1\11\2\26\1\17\1\20\1\26\2\20\1\5\1\20\1\6\1\4\2\20\1\2\4\20\1\1\1\20\1\16\12\20\1\7\1\26\1\10\uff82\26",
             "\1\27",
             "\1\31",
             "\1\32",

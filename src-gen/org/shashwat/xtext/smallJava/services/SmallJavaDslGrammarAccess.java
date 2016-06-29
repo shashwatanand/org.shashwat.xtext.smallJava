@@ -19,7 +19,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	public class NamespaceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Namespace");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.shashwat.xtext.smallJava.SmallJavaDsl.Namespace");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cNamespaceKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -30,13 +30,15 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSmallJavaSmallJavaParserRuleCall_3_0 = (RuleCall)cSmallJavaAssignment_3.eContents().get(0);
 		
 		//Namespace:
-		//	"namespace" name=QualifiedName imports+=Import* smallJava=SmallJava;
+		//	'namespace' name=QualifiedName
+		//	imports+=Import*
+		//	smallJava=SmallJava;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"namespace" name=QualifiedName imports+=Import* smallJava=SmallJava
+		//'namespace' name=QualifiedName imports+=Import* smallJava=SmallJava
 		public Group getGroup() { return cGroup; }
 
-		//"namespace"
+		//'namespace'
 		public Keyword getNamespaceKeyword_0() { return cNamespaceKeyword_0; }
 
 		//name=QualifiedName
@@ -59,20 +61,20 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ImportElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Import");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.shashwat.xtext.smallJava.SmallJavaDsl.Import");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cImportedNamespaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cImportedNamespaceQualifiedNameWithWildCardsParserRuleCall_1_0 = (RuleCall)cImportedNamespaceAssignment_1.eContents().get(0);
 		
 		//Import:
-		//	"import" importedNamespace=QualifiedNameWithWildCards;
+		//	'import' importedNamespace=QualifiedNameWithWildCards;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"import" importedNamespace=QualifiedNameWithWildCards
+		//'import' importedNamespace=QualifiedNameWithWildCards
 		public Group getGroup() { return cGroup; }
 
-		//"import"
+		//'import'
 		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
 
 		//importedNamespace=QualifiedNameWithWildCards
@@ -83,7 +85,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedName");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.shashwat.xtext.smallJava.SmallJavaDsl.QualifiedName");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -91,19 +93,19 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		//QualifiedName:
-		//	ID ("." ID)*;
+		//	ID ('.' ID)*;
 		@Override public ParserRule getRule() { return rule; }
 
-		//ID ("." ID)*
+		//ID ('.' ID)*
 		public Group getGroup() { return cGroup; }
 
 		//ID
 		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
 
-		//("." ID)*
+		//('.' ID)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//"."
+		//'.'
 		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
 
 		//ID
@@ -111,27 +113,27 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class QualifiedNameWithWildCardsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedNameWithWildCards");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.shashwat.xtext.smallJava.SmallJavaDsl.QualifiedNameWithWildCards");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cQualifiedNameParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Keyword cFullStopAsteriskKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//QualifiedNameWithWildCards:
-		//	QualifiedName ".*"?;
+		//	QualifiedName '.*'?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//QualifiedName ".*"?
+		//QualifiedName '.*'?
 		public Group getGroup() { return cGroup; }
 
 		//QualifiedName
 		public RuleCall getQualifiedNameParserRuleCall_0() { return cQualifiedNameParserRuleCall_0; }
 
-		//".*"?
+		//'.*'?
 		public Keyword getFullStopAsteriskKeyword_1() { return cFullStopAsteriskKeyword_1; }
 	}
 
 	public class SmallJavaElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SmallJava");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.shashwat.xtext.smallJava.SmallJavaDsl.SmallJava");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cVisibilityAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cVisibilityVisibilityTypesEnumRuleCall_0_0 = (RuleCall)cVisibilityAssignment_0.eContents().get(0);
@@ -151,12 +153,13 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//SmallJava:
-		//	visibility=VisibilityTypes? final?="final"? "class" name=ID ("extends" parent=[SmallJava])? "{" attribute+=Attribute*
-		//	"}";
+		//	visibility=VisibilityTypes? final?='final'? 'class' name=ID ('extends' parent=[SmallJava])? '{'
+		//	attribute+=Attribute*
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 
-		//visibility=VisibilityTypes? final?="final"? "class" name=ID ("extends" parent=[SmallJava])? "{" attribute+=Attribute*
-		//"}"
+		//visibility=VisibilityTypes? final?='final'? 'class' name=ID ('extends' parent=[SmallJava])? '{' attribute+=Attribute*
+		//'}'
 		public Group getGroup() { return cGroup; }
 
 		//visibility=VisibilityTypes?
@@ -165,13 +168,13 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//VisibilityTypes
 		public RuleCall getVisibilityVisibilityTypesEnumRuleCall_0_0() { return cVisibilityVisibilityTypesEnumRuleCall_0_0; }
 
-		//final?="final"?
+		//final?='final'?
 		public Assignment getFinalAssignment_1() { return cFinalAssignment_1; }
 
-		//"final"
+		//'final'
 		public Keyword getFinalFinalKeyword_1_0() { return cFinalFinalKeyword_1_0; }
 
-		//"class"
+		//'class'
 		public Keyword getClassKeyword_2() { return cClassKeyword_2; }
 
 		//name=ID
@@ -180,10 +183,10 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
 
-		//("extends" parent=[SmallJava])?
+		//('extends' parent=[SmallJava])?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"extends"
+		//'extends'
 		public Keyword getExtendsKeyword_4_0() { return cExtendsKeyword_4_0; }
 
 		//parent=[SmallJava]
@@ -195,7 +198,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getParentSmallJavaIDTerminalRuleCall_4_1_0_1() { return cParentSmallJavaIDTerminalRuleCall_4_1_0_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 
 		//attribute+=Attribute*
@@ -204,12 +207,12 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Attribute
 		public RuleCall getAttributeAttributeParserRuleCall_6_0() { return cAttributeAttributeParserRuleCall_6_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class AttributeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Attribute");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.shashwat.xtext.smallJava.SmallJavaDsl.Attribute");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cDatatypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cDatatypeDatatypeParserRuleCall_0_0 = (RuleCall)cDatatypeAssignment_0.eContents().get(0);
@@ -219,10 +222,10 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
 		//Attribute:
-		//	datatype=Datatype array?="[]"? name=ID;
+		//	datatype=Datatype array?='[]'? name=ID;
 		@Override public ParserRule getRule() { return rule; }
 
-		//datatype=Datatype array?="[]"? name=ID
+		//datatype=Datatype array?='[]'? name=ID
 		public Group getGroup() { return cGroup; }
 
 		//datatype=Datatype
@@ -231,10 +234,10 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Datatype
 		public RuleCall getDatatypeDatatypeParserRuleCall_0_0() { return cDatatypeDatatypeParserRuleCall_0_0; }
 
-		//array?="[]"?
+		//array?='[]'?
 		public Assignment getArrayAssignment_1() { return cArrayAssignment_1; }
 
-		//"[]"
+		//'[]'
 		public Keyword getArrayLeftSquareBracketRightSquareBracketKeyword_1_0() { return cArrayLeftSquareBracketRightSquareBracketKeyword_1_0; }
 
 		//name=ID
@@ -245,7 +248,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class DatatypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Datatype");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.shashwat.xtext.smallJava.SmallJavaDsl.Datatype");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Action cDatatypeAction_0_0 = (Action)cGroup_0.eContents().get(0);
@@ -273,7 +276,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class SimpleTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SimpleType");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.shashwat.xtext.smallJava.SmallJavaDsl.SimpleType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Keyword cStringKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cIntegerKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
@@ -282,30 +285,30 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cBigDecimalKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
 		
 		//SimpleType:
-		//	"String" | "Integer" | "Boolean" | "Decimal" | "BigDecimal";
+		//	'String' | 'Integer' | 'Boolean' | 'Decimal' | 'BigDecimal';
 		@Override public ParserRule getRule() { return rule; }
 
-		//"String" | "Integer" | "Boolean" | "Decimal" | "BigDecimal"
+		//'String' | 'Integer' | 'Boolean' | 'Decimal' | 'BigDecimal'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"String"
+		//'String'
 		public Keyword getStringKeyword_0() { return cStringKeyword_0; }
 
-		//"Integer"
+		//'Integer'
 		public Keyword getIntegerKeyword_1() { return cIntegerKeyword_1; }
 
-		//"Boolean"
+		//'Boolean'
 		public Keyword getBooleanKeyword_2() { return cBooleanKeyword_2; }
 
-		//"Decimal"
+		//'Decimal'
 		public Keyword getDecimalKeyword_3() { return cDecimalKeyword_3; }
 
-		//"BigDecimal"
+		//'BigDecimal'
 		public Keyword getBigDecimalKeyword_4() { return cBigDecimalKeyword_4; }
 	}
 
 	public class SmallJavaTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SmallJavaType");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.shashwat.xtext.smallJava.SmallJavaDsl.SmallJavaType");
 		private final Assignment cTypeAssignment = (Assignment)rule.eContents().get(1);
 		private final CrossReference cTypeSmallJavaCrossReference_0 = (CrossReference)cTypeAssignment.eContents().get(0);
 		private final RuleCall cTypeSmallJavaIDTerminalRuleCall_0_1 = (RuleCall)cTypeSmallJavaCrossReference_0.eContents().get(1);
@@ -326,7 +329,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	public class VisibilityTypesElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "VisibilityTypes");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.shashwat.xtext.smallJava.SmallJavaDsl.VisibilityTypes");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cPUBLICEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cPUBLICPublicKeyword_0_0 = (Keyword)cPUBLICEnumLiteralDeclaration_0.eContents().get(0);
@@ -358,7 +361,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final QualifiedNameElements pQualifiedName;
 	private final QualifiedNameWithWildCardsElements pQualifiedNameWithWildCards;
 	private final SmallJavaElements pSmallJava;
-	private final VisibilityTypesElements unknownRuleVisibilityTypes;
+	private final VisibilityTypesElements eVisibilityTypes;
 	private final AttributeElements pAttribute;
 	private final DatatypeElements pDatatype;
 	private final SimpleTypeElements pSimpleType;
@@ -378,7 +381,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pQualifiedName = new QualifiedNameElements();
 		this.pQualifiedNameWithWildCards = new QualifiedNameWithWildCardsElements();
 		this.pSmallJava = new SmallJavaElements();
-		this.unknownRuleVisibilityTypes = new VisibilityTypesElements();
+		this.eVisibilityTypes = new VisibilityTypesElements();
 		this.pAttribute = new AttributeElements();
 		this.pDatatype = new DatatypeElements();
 		this.pSimpleType = new SimpleTypeElements();
@@ -413,7 +416,9 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Namespace:
-	//	"namespace" name=QualifiedName imports+=Import* smallJava=SmallJava;
+	//	'namespace' name=QualifiedName
+	//	imports+=Import*
+	//	smallJava=SmallJava;
 	public NamespaceElements getNamespaceAccess() {
 		return pNamespace;
 	}
@@ -423,7 +428,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Import:
-	//	"import" importedNamespace=QualifiedNameWithWildCards;
+	//	'import' importedNamespace=QualifiedNameWithWildCards;
 	public ImportElements getImportAccess() {
 		return pImport;
 	}
@@ -433,7 +438,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//QualifiedName:
-	//	ID ("." ID)*;
+	//	ID ('.' ID)*;
 	public QualifiedNameElements getQualifiedNameAccess() {
 		return pQualifiedName;
 	}
@@ -443,7 +448,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//QualifiedNameWithWildCards:
-	//	QualifiedName ".*"?;
+	//	QualifiedName '.*'?;
 	public QualifiedNameWithWildCardsElements getQualifiedNameWithWildCardsAccess() {
 		return pQualifiedNameWithWildCards;
 	}
@@ -453,8 +458,9 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SmallJava:
-	//	visibility=VisibilityTypes? final?="final"? "class" name=ID ("extends" parent=[SmallJava])? "{" attribute+=Attribute*
-	//	"}";
+	//	visibility=VisibilityTypes? final?='final'? 'class' name=ID ('extends' parent=[SmallJava])? '{'
+	//	attribute+=Attribute*
+	//	'}';
 	public SmallJavaElements getSmallJavaAccess() {
 		return pSmallJava;
 	}
@@ -466,7 +472,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	//enum VisibilityTypes:
 	//	PUBLIC="public" | PRIVATE="private";
 	public VisibilityTypesElements getVisibilityTypesAccess() {
-		return unknownRuleVisibilityTypes;
+		return eVisibilityTypes;
 	}
 	
 	public EnumRule getVisibilityTypesRule() {
@@ -474,7 +480,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Attribute:
-	//	datatype=Datatype array?="[]"? name=ID;
+	//	datatype=Datatype array?='[]'? name=ID;
 	public AttributeElements getAttributeAccess() {
 		return pAttribute;
 	}
@@ -494,7 +500,7 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SimpleType:
-	//	"String" | "Integer" | "Boolean" | "Decimal" | "BigDecimal";
+	//	'String' | 'Integer' | 'Boolean' | 'Decimal' | 'BigDecimal';
 	public SimpleTypeElements getSimpleTypeAccess() {
 		return pSimpleType;
 	}
@@ -514,38 +520,37 @@ public class SmallJavaDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal ID:
-	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
+	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
 	} 
 
 	//terminal INT returns ecore::EInt:
-	//	"0".."9"+;
+	//	'0'..'9'+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	} 
 
 	//terminal STRING:
-	//	"\"" ("\\" . / * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\""))* "\"" | "\'" ("\\" .
-	//	/ * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\'"))* "\'";
+	//	'"' ('\\' . | !('\\' | '"'))* '"' | "'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	} 
 
 	//terminal ML_COMMENT:
-	//	"/ *"->"* /";
+	//	'/ *'->'* /';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	} 
 
 	//terminal SL_COMMENT:
-	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
+	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	} 
 
 	//terminal WS:
-	//	(" " | "\t" | "\r" | "\n")+;
+	//	' ' | '\t' | '\r' | '\n'+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	} 

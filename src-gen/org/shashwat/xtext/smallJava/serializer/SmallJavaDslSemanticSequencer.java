@@ -4,17 +4,15 @@
 package org.shashwat.xtext.smallJava.serializer;
 
 import com.google.inject.Inject;
-import com.google.inject.Provider;
+import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.xtext.Action;
+import org.eclipse.xtext.Parameter;
+import org.eclipse.xtext.ParserRule;
+import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
-import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
-import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
-import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
-import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.shashwat.xtext.smallJava.services.SmallJavaDslGrammarAccess;
 import org.shashwat.xtext.smallJava.smallJavaDsl.Attribute;
@@ -32,8 +30,13 @@ public class SmallJavaDslSemanticSequencer extends AbstractDelegatingSemanticSeq
 	private SmallJavaDslGrammarAccess grammarAccess;
 	
 	@Override
-	public void createSequence(EObject context, EObject semanticObject) {
-		if(semanticObject.eClass().getEPackage() == SmallJavaDslPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+	public void sequence(ISerializationContext context, EObject semanticObject) {
+		EPackage epackage = semanticObject.eClass().getEPackage();
+		ParserRule rule = context.getParserRule();
+		Action action = context.getAssignedAction();
+		Set<Parameter> parameters = context.getEnabledBooleanParameters();
+		if (epackage == SmallJavaDslPackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
 			case SmallJavaDslPackage.ATTRIBUTE:
 				sequence_Attribute(context, (Attribute) semanticObject); 
 				return; 
@@ -53,73 +56,93 @@ public class SmallJavaDslSemanticSequencer extends AbstractDelegatingSemanticSeq
 				sequence_SmallJavaType(context, (SmallJavaType) semanticObject); 
 				return; 
 			}
-		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
+		if (errorAcceptor != null)
+			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
 	
 	/**
+	 * Contexts:
+	 *     Attribute returns Attribute
+	 *
 	 * Constraint:
 	 *     (datatype=Datatype array?='[]'? name=ID)
 	 */
-	protected void sequence_Attribute(EObject context, Attribute semanticObject) {
+	protected void sequence_Attribute(ISerializationContext context, Attribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     Datatype returns Datatype
+	 *
 	 * Constraint:
 	 *     {Datatype}
 	 */
-	protected void sequence_Datatype(EObject context, Datatype semanticObject) {
+	protected void sequence_Datatype(ISerializationContext context, Datatype semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     Import returns Import
+	 *
 	 * Constraint:
 	 *     importedNamespace=QualifiedNameWithWildCards
 	 */
-	protected void sequence_Import(EObject context, Import semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SmallJavaDslPackage.Literals.IMPORT__IMPORTED_NAMESPACE) == ValueTransient.YES)
+	protected void sequence_Import(ISerializationContext context, Import semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmallJavaDslPackage.Literals.IMPORT__IMPORTED_NAMESPACE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmallJavaDslPackage.Literals.IMPORT__IMPORTED_NAMESPACE));
 		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildCardsParserRuleCall_1_0(), semanticObject.getImportedNamespace());
 		feeder.finish();
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     Namespace returns Namespace
+	 *
 	 * Constraint:
 	 *     (name=QualifiedName imports+=Import* smallJava=SmallJava)
 	 */
-	protected void sequence_Namespace(EObject context, Namespace semanticObject) {
+	protected void sequence_Namespace(ISerializationContext context, Namespace semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     Datatype returns SmallJavaType
+	 *     SmallJavaType returns SmallJavaType
+	 *
 	 * Constraint:
 	 *     type=[SmallJava|ID]
 	 */
-	protected void sequence_SmallJavaType(EObject context, SmallJavaType semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SmallJavaDslPackage.Literals.SMALL_JAVA_TYPE__TYPE) == ValueTransient.YES)
+	protected void sequence_SmallJavaType(ISerializationContext context, SmallJavaType semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmallJavaDslPackage.Literals.SMALL_JAVA_TYPE__TYPE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmallJavaDslPackage.Literals.SMALL_JAVA_TYPE__TYPE));
 		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSmallJavaTypeAccess().getTypeSmallJavaIDTerminalRuleCall_0_1(), semanticObject.getType());
 		feeder.finish();
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     SmallJava returns SmallJava
+	 *
 	 * Constraint:
 	 *     (visibility=VisibilityTypes? final?='final'? name=ID parent=[SmallJava|ID]? attribute+=Attribute*)
 	 */
-	protected void sequence_SmallJava(EObject context, SmallJava semanticObject) {
+	protected void sequence_SmallJava(ISerializationContext context, SmallJava semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
+	
+	
 }

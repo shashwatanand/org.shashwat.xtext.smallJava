@@ -95,7 +95,7 @@ ruleNamespace returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"QualifiedName");
+        		"org.shashwat.xtext.smallJava.SmallJavaDsl.QualifiedName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -113,7 +113,7 @@ ruleNamespace returns [EObject current=null]
        			$current, 
        			"imports",
         		lv_imports_2_0, 
-        		"Import");
+        		"org.shashwat.xtext.smallJava.SmallJavaDsl.Import");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -131,7 +131,7 @@ ruleNamespace returns [EObject current=null]
        			$current, 
        			"smallJava",
         		lv_smallJava_3_0, 
-        		"SmallJava");
+        		"org.shashwat.xtext.smallJava.SmallJavaDsl.SmallJava");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -174,7 +174,7 @@ ruleImport returns [EObject current=null]
        			$current, 
        			"importedNamespace",
         		lv_importedNamespace_1_0, 
-        		"QualifiedNameWithWildCards");
+        		"org.shashwat.xtext.smallJava.SmallJavaDsl.QualifiedNameWithWildCards");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -292,7 +292,7 @@ ruleSmallJava returns [EObject current=null]
        			$current, 
        			"visibility",
         		lv_visibility_0_0, 
-        		"VisibilityTypes");
+        		"org.shashwat.xtext.smallJava.SmallJavaDsl.VisibilityTypes");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -330,7 +330,7 @@ ruleSmallJava returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_3_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -368,7 +368,7 @@ ruleSmallJava returns [EObject current=null]
        			$current, 
        			"attribute",
         		lv_attribute_7_0, 
-        		"Attribute");
+        		"org.shashwat.xtext.smallJava.SmallJavaDsl.Attribute");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -411,7 +411,7 @@ ruleAttribute returns [EObject current=null]
        			$current, 
        			"datatype",
         		lv_datatype_0_0, 
-        		"Datatype");
+        		"org.shashwat.xtext.smallJava.SmallJavaDsl.Datatype");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -445,7 +445,7 @@ ruleAttribute returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
